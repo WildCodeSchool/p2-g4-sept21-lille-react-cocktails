@@ -1,5 +1,7 @@
+import CocktailCard from './component/CocktailCard';
+
 function App() {
-  return <h1>Hello there!</h1>;
+  return <CocktailCard />;
 }
 
 export default App;
