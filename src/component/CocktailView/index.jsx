@@ -14,11 +14,10 @@ export default function CocktailView() {
       });
   }, []);
 
-  console.log(cocktails);
   return (
     <div>
       {cocktails.map((data) => {
-        return <CocktailCard cocktails={data} />;
+        return <CocktailCard key={data.idDrink} {...data} />;
       })}
     </div>
   );
