@@ -1,7 +1,7 @@
-import CocktailCard from './component/CocktailCard';
+import CocktailView from './component/CocktailView';
 
 function App() {
-  return <CocktailCard />;
+  return <CocktailView />;
 }
 
 export default App;
