@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-// import CocktailCard from '../CocktailCard';
+import CocktailCard from '../CocktailCard';
 
 export default function CocktailView() {
   const [cocktails, setCocktails] = useState([]);
@@ -17,12 +17,9 @@ export default function CocktailView() {
   console.log(cocktails);
   return (
     <div>
-      <ul>
-        {cocktails.map((result) => {
-          return <li>{result.idDrink}</li>;
-          // return <CocktailCard result={result} />;
-        })}
-      </ul>
+      {cocktails.map((data) => {
+        return <CocktailCard cocktails={data} />;
+      })}
     </div>
   );
 }
