@@ -1,5 +1,12 @@
-function CocktailCard({ cocktails }) {
-  return cocktails.strDrink;
+import PropTypes from 'prop-types';
+
+export default function CocktailCard({ strDrink }) {
+  return (
+    <div>
+      <div>{strDrink}</div>
+    </div>
+  );
 }
 
-export default CocktailCard;
+CocktailCard.propTypes = { strDrink: PropTypes.string };
+CocktailCard.defaultProps = { strDrink: '' };
