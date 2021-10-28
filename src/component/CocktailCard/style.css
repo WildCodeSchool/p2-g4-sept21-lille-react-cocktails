@@ -41,4 +41,6 @@
 .titleCard {
   grid-area: title;
   grid-row-start: 1;
+  font-family: 'Rouge Script', cursive;
+  padding-left: 10px;
 }
