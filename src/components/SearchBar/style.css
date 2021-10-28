@@ -1,0 +1,40 @@
+form div {
+  height: 4vh;
+  display: flex;
+  flex-direction: row-reverse;
+  box-shadow: 3px 4px 3px rgba(255, 184, 0, 0.76);
+  border-radius: 15px;
+  border-collapse: separate;
+  perspective: 1px;
+  overflow: hidden;
+}
+
+input {
+  height: 100%;
+  border: none;
+}
+
+form button img {
+  height: 80%;
+  opacity: 75%;
+  padding: 5%;
+}
+
+button {
+  height: 100%;
+  border: none;
+  background: white;
+  padding: 0 15px;
+}
+
+@media only screen and (min-width: 600px) {
+  form div {
+    height: 6vh;
+    border-radius: 30px;
+    margin-top: 2vh;
+  }
+
+  input {
+    width: 35vw;
+  }
+}
