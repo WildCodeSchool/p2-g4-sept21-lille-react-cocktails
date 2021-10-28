@@ -1,7 +1,13 @@
 import CocktailView from './component/CocktailView';
+import Header from './components/Header';
 
 function App() {
-  return <CocktailView />;
+  return (
+    <>
+      <Header displaySearch />
+      <CocktailView />
+    </>
+  );
 }
 
 export default App;

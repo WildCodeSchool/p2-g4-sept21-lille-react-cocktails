@@ -17,9 +17,6 @@ export default function CocktailView() {
 
   return (
     <div>
-      <div className="fakeHeader">
-        <p>HEADER</p>
-      </div>
       <div className="cardContainer">
         {cocktails.map((data) => {
           return <CocktailCard key={data.idDrink} {...data} />;

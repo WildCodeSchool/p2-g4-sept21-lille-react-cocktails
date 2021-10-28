@@ -1,0 +1,12 @@
+img.icon {
+  height: 100%;
+  padding-left: 4vw;
+}
+
+@media only screen and (min-width: 600px) {
+  img.icon {
+    height: 150%;
+    padding-left: 4vw;
+    margin-top: 2vh;
+  }
+}
