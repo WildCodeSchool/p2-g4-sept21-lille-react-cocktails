@@ -9,6 +9,10 @@
   display: grid;
   grid-template-columns: 2.5fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'title picture'
+    'ingredient picture'
+    'ingredient logo';
   margin: auto;
   background: linear-gradient(#ffc700, #2b2a33);
   margin-bottom: 20px;
@@ -17,6 +21,7 @@
 }
 
 .imgCard {
+  grid-area: picture;
   grid-column-start: 2;
 }
 
@@ -28,10 +33,12 @@
 }
 
 .ingredientCard {
+  grid-area: ingredient;
   font-size: 20px;
   grid-column-start: 1;
 }
 
 .titleCard {
+  grid-area: title;
   grid-row-start: 1;
 }
