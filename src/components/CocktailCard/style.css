@@ -15,6 +15,7 @@
     'ingredient logo';
   margin: auto;
   background: linear-gradient(#ffc700, #2b2a33);
+  opacity: 85%;
   margin-bottom: 20px;
   border-radius: 0 20px 0 20px !important;
   color: white;
@@ -23,6 +24,7 @@
 .imgCard {
   grid-area: picture;
   grid-column-start: 2;
+  opacity: 100%;
 }
 
 .imgCard img {
