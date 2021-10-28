@@ -5,7 +5,6 @@ import './style.css';
 
 export default function CocktailView() {
   const [cocktails, setCocktails] = useState([]);
-  // const [result, setResult] = useState();
 
   useEffect(() => {
     axios
