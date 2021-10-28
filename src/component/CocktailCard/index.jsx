@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-// import { useEffect } from 'react';
+import './style.css';
 
 export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
-  // useEffect(() => {
   const listing = Object.keys(rest)
     .filter((key) => {
       return key.includes('Ingredient') && rest[key] !== null;
@@ -11,7 +10,6 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
       return rest[key];
     })
     .join(', ');
-  // }, []);
 
   return (
     <div>
@@ -20,8 +18,8 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
           <div className="imgCard">
             <img src={strDrinkThumb} alt={strDrink} />
           </div>
-          <h2>{strDrink}</h2>
-          <div className="tagIcon">{listing}</div>
+          <h2 className="titleCard">{strDrink}</h2>
+          <p className="ingredientCard">{listing}</p>
         </div>
       </div>
     </div>

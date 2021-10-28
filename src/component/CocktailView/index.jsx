@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
+import './style.css';
 
 export default function CocktailView() {
   const [cocktails, setCocktails] = useState([]);
@@ -16,9 +17,11 @@ export default function CocktailView() {
 
   return (
     <div>
-      {cocktails.map((data) => {
-        return <CocktailCard key={data.idDrink} {...data} />;
-      })}
+      <div className="cardContainer">
+        {cocktails.map((data) => {
+          return <CocktailCard key={data.idDrink} {...data} />;
+        })}
+      </div>
     </div>
   );
 }
