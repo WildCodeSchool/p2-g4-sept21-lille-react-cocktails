@@ -5,19 +5,18 @@
 
 .mainCard {
   width: 80vw;
-  height: 45vw;
+  height: 38vw;
   display: grid;
-  grid-template-columns: 2.5fr 1fr;
+  grid-template-columns: 2.2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     'title picture'
     'ingredient picture'
     'ingredient logo';
   margin: auto;
-  background: linear-gradient(#ffc700, #2b2a33);
-  opacity: 85%;
+  background: linear-gradient(rgba(255, 199, 0, 0.85), rgba(43, 42, 51, 1));
   margin-bottom: 20px;
-  border-radius: 0 20px 0 20px !important;
+  border-radius: 10px 20px 0 20px !important;
   color: white;
 }
 
@@ -29,20 +28,31 @@
 
 .imgCard img {
   width: 100%;
-  max-width: 130px;
+  max-width: 150px;
   height: auto;
   border-radius: 0% 10% 0% 10%;
+  opacity: 100%;
 }
 
 .ingredientCard {
   grid-area: ingredient;
-  font-size: 20px;
   grid-column-start: 1;
+  font-size: 16px;
+  text-align: left;
+  padding-right: 5px;
+  padding-left: 15px;
 }
 
 .titleCard {
   grid-area: title;
   grid-row-start: 1;
   font-family: 'Rouge Script', cursive;
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+  font-size: 45px;
+  text-align: start;
+  text-transform: lowercase;
+  opacity: 100%;
+  color: white;
 }
