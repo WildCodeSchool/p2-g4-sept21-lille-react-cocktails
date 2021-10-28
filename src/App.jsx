@@ -1,5 +1,13 @@
+import Header from './components/Header';
+
+import './style.css';
+
 function App() {
-  return <h1>Hello there!</h1>;
+  return (
+    <>
+      <Header displaySearch />
+    </>
+  );
 }
 
 export default App;
