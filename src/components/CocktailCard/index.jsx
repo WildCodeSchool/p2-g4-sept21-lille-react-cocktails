@@ -13,14 +13,12 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
 
   return (
     <div>
-      <div>
-        <div className="mainCard">
-          <div className="imgCard">
-            <img src={strDrinkThumb} alt={strDrink} />
-          </div>
-          <h2 className="titleCard">{strDrink}</h2>
-          <p className="ingredientCard">{listing}</p>
+      <div className="mainCard">
+        <div className="imgCard">
+          <img src={strDrinkThumb} alt={strDrink} />
         </div>
+        <h2 className="titleCard">{strDrink}</h2>
+        <p className="ingredientCard">{listing}</p>
       </div>
     </div>
   );
