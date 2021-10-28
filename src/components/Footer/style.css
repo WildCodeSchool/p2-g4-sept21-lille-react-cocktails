@@ -1,0 +1,36 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  height: 5vh;
+  align-items: center;
+  background: #2b2a33;
+  color: white;
+  font-family: ruda, sans-serif;
+  font-size: 0.7rem;
+}
+
+div.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+div.icons img {
+  height: 2vh;
+}
+
+@media only screen and (min-width: 700px) {
+  .footer {
+    justify-content: flex-end;
+    font-size: 1rem;
+  }
+
+  div.icons {
+    margin-right: 2vw;
+    width: 10vw;
+  }
+
+  p {
+    margin-right: 25vw;
+  }
+}
