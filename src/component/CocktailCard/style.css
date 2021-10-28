@@ -1,14 +1,23 @@
+:root {
+  --linear-gradient-color1: #ffc700;
+  --linear-gradient-color2: #2b2a33;
+}
+
 .mainCard {
   width: 80vw;
   height: 45vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   margin: auto;
   background: linear-gradient(#ffc700, #2b2a33);
   margin-bottom: 20px;
-  border-radius: 0% 20% 0% 10% !important;
+  border-radius: 0 20px 0 20px !important;
+  color: white;
+}
+
+.imgCard {
+  grid-column-start: 2;
 }
 
 .imgCard img {
@@ -20,4 +29,9 @@
 
 .ingredientCard {
   font-size: 20px;
+  grid-column-start: 1;
+}
+
+.titleCard {
+  grid-row-start: 1;
 }
