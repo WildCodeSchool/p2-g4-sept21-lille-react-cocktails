@@ -1,0 +1,94 @@
+:root {
+  --linear-gradient-color1: #ffc700;
+  --linear-gradient-color2: #2b2a33;
+}
+
+.mainCard {
+  width: 80vw;
+  height: 38vw;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    'title picture'
+    'ingredient picture'
+    'ingredient logo';
+  margin: auto;
+  background: linear-gradient(rgba(255, 200, 0, 0.76), rgba(43, 42, 51, 1));
+  margin-bottom: 20px;
+  border-radius: 20px 20px 0 20px;
+  color: white;
+}
+
+.imgCard {
+  grid-area: picture;
+  grid-column-start: 2;
+  opacity: 100%;
+}
+
+.imgCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 0% 10% 0% 10%;
+  opacity: 100%;
+}
+
+.ingredientCard {
+  grid-area: ingredient;
+  grid-column-start: 1;
+  font-size: 16px;
+  text-align: left;
+  padding-right: 5px;
+  padding-left: 15px;
+}
+
+.titleCard {
+  grid-area: title;
+  grid-row-start: 1;
+  font-family: 'Rouge Script', cursive;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 15px;
+  font-size: 45px;
+  text-align: start;
+  text-transform: capitalize;
+  opacity: 100%;
+  color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  .mainCard {
+    width: 26vw;
+    height: 40vh;
+    min-height: 600px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    border-radius: 20px 20px 0 0;
+    background: #ffc700;
+  }
+
+  .imgCard {
+    width: 100%;
+  }
+
+  .imgCard img {
+    width: 100%;
+    border-radius: 20px 0 0 0;
+  }
+
+  .titleCard {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+  }
+
+  .ingredientCard {
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+  }
+}
