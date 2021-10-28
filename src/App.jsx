@@ -1,4 +1,4 @@
-import CocktailView from './component/CocktailView';
+import CocktailView from './components/CocktailView';
 import Header from './components/Header';
 
 function App() {
