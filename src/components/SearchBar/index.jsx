@@ -5,10 +5,17 @@ import './style.css';
 export default function SearchBar({
   searchBarInputUser,
   setSearchBarInputUser,
+
+  setStatsSearchBar,
 }) {
   return (
     <div className="searchBar">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setStatsSearchBar(true);
+        }}
+      >
         <div>
           <input
             type="search"
@@ -31,8 +38,10 @@ export default function SearchBar({
 SearchBar.propTypes = {
   searchBarInputUser: PropTypes.string,
   setSearchBarInputUser: PropTypes.string,
+  setStatsSearchBar: PropTypes.bool,
 };
 SearchBar.defaultProps = {
   searchBarInputUser: '',
   setSearchBarInputUser: '',
+  setStatsSearchBar: false,
 };

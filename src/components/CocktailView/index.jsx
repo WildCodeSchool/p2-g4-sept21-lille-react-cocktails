@@ -4,18 +4,26 @@ import axios from 'axios';
 import CocktailCard from '../CocktailCard';
 import './style.css';
 
-export default function CocktailView({ searchBarInputUser }) {
+export default function CocktailView({
+  searchBarInputUser,
+  statsSearchBar,
+  setStatsSearchBar,
+}) {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBarInputUser}`
-      )
-      .then(({ data }) => {
-        setCocktails(data.drinks);
-      });
-  }, [searchBarInputUser]);
+    if (statsSearchBar) {
+      console.log(statsSearchBar);
+      axios
+        .get(
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBarInputUser}`
+        )
+        .then(({ data }) => {
+          setCocktails(data.drinks);
+        });
+    }
+    setStatsSearchBar(false);
+  }, [statsSearchBar]);
 
   return (
     <div>
@@ -32,7 +40,11 @@ export default function CocktailView({ searchBarInputUser }) {
 
 CocktailView.propTypes = {
   searchBarInputUser: PropTypes.string,
+  statsSearchBar: PropTypes.bool,
+  setStatsSearchBar: PropTypes.bool,
 };
 CocktailView.defaultProps = {
   searchBarInputUser: '',
+  statsSearchBar: false,
+  setStatsSearchBar: false,
 };

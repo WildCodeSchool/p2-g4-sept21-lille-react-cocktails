@@ -8,6 +8,8 @@ export default function Header({
   displaySearch,
   searchBarInputUser,
   setSearchBarInputUser,
+  statsSearchBar,
+  setStatsSearchBar,
 }) {
   return (
     <div className="header">
@@ -24,6 +26,8 @@ export default function Header({
           <SearchBar
             searchBarInputUser={searchBarInputUser}
             setSearchBarInputUser={setSearchBarInputUser}
+            statsSearchBar={statsSearchBar}
+            setStatsSearchBar={setStatsSearchBar}
           />
         ) : null}
         {displaySearch ? <Favorites /> : null}
@@ -36,9 +40,13 @@ Header.propTypes = {
   displaySearch: PropTypes.bool,
   searchBarInputUser: PropTypes.string,
   setSearchBarInputUser: PropTypes.string,
+  statsSearchBar: PropTypes.bool,
+  setStatsSearchBar: PropTypes.bool,
 };
 Header.defaultProps = {
   displaySearch: false,
   searchBarInputUser: '',
   setSearchBarInputUser: '',
+  statsSearchBar: false,
+  setStatsSearchBar: false,
 };
