@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
@@ -18,7 +19,12 @@ export default function CocktailView() {
     <div>
       <div className="cardContainer">
         {cocktails.map((data) => {
-          return <CocktailCard key={data.idDrink} {...data} />;
+          const path = `detail/${data.strDrink}`;
+          return (
+            <Link className="displayLink" to={path}>
+              <CocktailCard key={data.idDrink} {...data} />
+            </Link>
+          );
         })}
       </div>
     </div>
