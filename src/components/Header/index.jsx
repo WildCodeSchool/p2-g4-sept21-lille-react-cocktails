@@ -4,7 +4,11 @@ import SearchBar from '../SearchBar';
 import Favorites from '../Favorites';
 import logo1 from '../../assets/logo1.png';
 
-export default function Header({ displaySearch }) {
+export default function Header({
+  displaySearch,
+  searchBarInputUser,
+  setSearchBarInputUser,
+}) {
   return (
     <div className="header">
       <div className="top">
@@ -16,7 +20,12 @@ export default function Header({ displaySearch }) {
         </div>
       </div>
       <div className="bottom">
-        {displaySearch ? <SearchBar /> : null}
+        {displaySearch ? (
+          <SearchBar
+            searchBarInputUser={searchBarInputUser}
+            setSearchBarInputUser={setSearchBarInputUser}
+          />
+        ) : null}
         {displaySearch ? <Favorites /> : null}
       </div>
     </div>
@@ -25,5 +34,11 @@ export default function Header({ displaySearch }) {
 
 Header.propTypes = {
   displaySearch: PropTypes.bool,
+  searchBarInputUser: PropTypes.string,
+  setSearchBarInputUser: PropTypes.string,
 };
-Header.defaultProps = { displaySearch: false };
+Header.defaultProps = {
+  displaySearch: false,
+  searchBarInputUser: '',
+  setSearchBarInputUser: '',
+};
