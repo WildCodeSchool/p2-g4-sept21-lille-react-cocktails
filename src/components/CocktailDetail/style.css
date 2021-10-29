@@ -1,0 +1,10 @@
+.cocktailDetail {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 90vw;
+  height: 75vh;
+}
+
+section.cocktailDetail img {
+  width: 10vh;
+}
