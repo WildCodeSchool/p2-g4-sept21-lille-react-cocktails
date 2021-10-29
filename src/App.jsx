@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import CocktailView from './components/CocktailView';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,8 +13,7 @@ function App() {
         searchBarInputUser={searchBarInputUser}
         setSearchBarInputUser={setSearchBarInputUser}
       />
-      <p>DEBUG:{searchBarInputUser}</p>
-      <CocktailView />
+      <CocktailView searchBarInputUser={searchBarInputUser} />
       <Footer />
     </>
   );
