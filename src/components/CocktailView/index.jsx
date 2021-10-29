@@ -13,7 +13,6 @@ export default function CocktailView({
 
   useEffect(() => {
     if (statsSearchBar) {
-      console.log(statsSearchBar);
       axios
         .get(
           `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBarInputUser}`
@@ -27,8 +26,6 @@ export default function CocktailView({
 
   return (
     <div>
-      <p>DEBUG:{searchBarInputUser}</p>
-
       <div className="cardContainer">
         {cocktails.map((data) => {
           return <CocktailCard key={data.idDrink} {...data} />;
