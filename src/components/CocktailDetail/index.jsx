@@ -33,11 +33,11 @@ export default function CocktailDetail() {
   }
   return (
     <section className="cocktailDetail">
-      <div>
+      <div className="bottomRight">
         <h2> {cocktail.strDrink} </h2>
         <p>{cocktail.strInstructions}</p>
       </div>
-      <div>
+      <div className="topLeft">
         <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
         <p>Ingredients :</p>
         <ul>
