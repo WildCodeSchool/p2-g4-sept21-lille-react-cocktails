@@ -37,10 +37,10 @@ export default function SearchBar({
 SearchBar.propTypes = {
   searchBarInputUser: PropTypes.func,
   setSearchBarInputUser: PropTypes.func,
-  setStatsSearchBar: PropTypes.bool,
+  setStatsSearchBar: PropTypes.func,
 };
 SearchBar.defaultProps = {
   searchBarInputUser: () => {},
   setSearchBarInputUser: () => {},
-  setStatsSearchBar: false,
+  setStatsSearchBar: () => {},
 };
