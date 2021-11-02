@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import CocktailView from './components/CocktailView';
 import Header from './components/Header';
 import Footer from './components/Footer';
