@@ -22,14 +22,14 @@ export default function Header({
         </div>
       </div>
       <div className="bottom">
-        {displaySearch ? (
+        {displaySearch && (
           <SearchBar
             searchBarInputUser={searchBarInputUser}
             setSearchBarInputUser={setSearchBarInputUser}
             statsSearchBar={statsSearchBar}
             setStatsSearchBar={setStatsSearchBar}
           />
-        ) : null}
+        )}
         {displaySearch ? <Favorites /> : null}
       </div>
     </div>

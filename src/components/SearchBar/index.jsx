@@ -5,7 +5,6 @@ import './style.css';
 export default function SearchBar({
   searchBarInputUser,
   setSearchBarInputUser,
-
   setStatsSearchBar,
 }) {
   return (
