@@ -18,7 +18,7 @@ export default function SearchBar({
         <div>
           <input
             type="search"
-            id="maRecherche"
+            id="mySearch"
             name="q"
             value={searchBarInputUser}
             onChange={(e) => {
