@@ -7,18 +7,16 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <>
-        <Header displaySearch />
-        <Switch>
-          <Route exact path="/">
-            <CocktailView />
-          </Route>
-          <Route path="/detail">
-            <CocktailDetail />
-          </Route>
-        </Switch>
-        <Footer />
-      </>
+      <Header displaySearch />
+      <Switch>
+        <Route exact path="/">
+          <CocktailView />
+        </Route>
+        <Route path="/detail">
+          <CocktailDetail />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
   );
 }
