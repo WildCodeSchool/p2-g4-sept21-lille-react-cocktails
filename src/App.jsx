@@ -1,4 +1,3 @@
-
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
 import CocktailView from './components/CocktailView';
@@ -10,7 +9,6 @@ function App() {
   const [searchBarInputUser, setSearchBarInputUser] = useState('');
   const [statsSearchBar, setStatsSearchBar] = useState(false);
   return (
-
     <Router>
       <Header
         displaySearch
@@ -21,11 +19,11 @@ function App() {
       />
       <Switch>
         <Route exact path="/">
-         <CocktailView
-        searchBarInputUser={searchBarInputUser}
-        statsSearchBar={statsSearchBar}
-        setStatsSearchBar={setStatsSearchBar}
-      />
+          <CocktailView
+            searchBarInputUser={searchBarInputUser}
+            statsSearchBar={statsSearchBar}
+            setStatsSearchBar={setStatsSearchBar}
+          />
         </Route>
         <Route path="/detail">
           <CocktailDetail />
