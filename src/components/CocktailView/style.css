@@ -2,6 +2,10 @@
   background-color: #2b2a33;
 }
 
+.displayLink {
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 600px) {
   .cardContainer {
     background-color: #2b2a33;

@@ -9,7 +9,8 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
     .map((key) => {
       return rest[key];
     })
-    .join(', ');
+    .join(', ')
+    .replace(/, ([^,]*)$/, '');
 
   return (
     <div>

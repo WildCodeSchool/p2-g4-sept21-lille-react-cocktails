@@ -4,7 +4,6 @@ import './style.css';
 
 export default function CocktailDetail() {
   const [cocktail, setCocktail] = useState([]);
-
   useEffect(() => {
     axios
       .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
