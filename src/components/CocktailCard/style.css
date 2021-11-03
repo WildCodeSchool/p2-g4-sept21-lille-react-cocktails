@@ -45,11 +45,11 @@
 .titleCard {
   grid-area: title;
   grid-row-start: 1;
-  font-family: 'Rouge Script', cursive;
+  font-family: 'Dancing Script', cursive;
   padding-left: 20px;
-  padding-top: 8px;
-  padding-bottom: 15px;
-  font-size: 45px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  font-size: 30px;
   text-align: start;
   text-transform: capitalize;
   opacity: 100%;
@@ -81,7 +81,7 @@
   .titleCard {
     width: 100%;
     text-align: center;
-    font-size: 60px;
+    font-size: 45px;
     padding-top: 20px;
     padding-bottom: 25px;
   }
