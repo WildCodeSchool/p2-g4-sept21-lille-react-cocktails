@@ -38,15 +38,15 @@ export default function Header({
 
 Header.propTypes = {
   displaySearch: PropTypes.bool,
-  searchBarInputUser: PropTypes.func,
+  searchBarInputUser: PropTypes.string,
   setSearchBarInputUser: PropTypes.func,
-  statsSearchBar: PropTypes.func,
+  statsSearchBar: PropTypes.bool,
   setStatsSearchBar: PropTypes.func,
 };
 Header.defaultProps = {
   displaySearch: false,
-  searchBarInputUser: () => {},
+  searchBarInputUser: '',
   setSearchBarInputUser: () => {},
-  statsSearchBar: () => {},
+  statsSearchBar: false,
   setStatsSearchBar: () => {},
 };
