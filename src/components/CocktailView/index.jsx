@@ -38,10 +38,10 @@ export default function CocktailView({
 CocktailView.propTypes = {
   searchBarInputUser: PropTypes.string,
   statsSearchBar: PropTypes.bool,
-  setStatsSearchBar: PropTypes.bool,
+  setStatsSearchBar: PropTypes.func,
 };
 CocktailView.defaultProps = {
   searchBarInputUser: '',
   statsSearchBar: false,
-  setStatsSearchBar: false,
+  setStatsSearchBar: () => {},
 };
