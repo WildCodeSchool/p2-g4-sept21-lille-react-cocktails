@@ -26,7 +26,7 @@ function App() {
             setStatsSearchBar={setStatsSearchBar}
           />
         </Route>
-        <Route path="/detail">
+        <Route path="/detail/:cocktailName">
           <CocktailDetail />
         </Route>
       </Switch>

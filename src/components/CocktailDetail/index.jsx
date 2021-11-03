@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
+import { useParams } from 'react-router-dom';
 
 export default function CocktailDetail() {
+  const { cocktailName } = useParams();
   const [cocktail, setCocktail] = useState([]);
+
   useEffect(() => {
     axios
-      .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+      .get(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`
+      )
       .then(({ data }) => {
         setCocktail(data.drinks[0]);
       });
