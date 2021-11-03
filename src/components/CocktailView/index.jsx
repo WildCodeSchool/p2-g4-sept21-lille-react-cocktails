@@ -1,19 +1,31 @@
+
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
 import './style.css';
 
-export default function CocktailView() {
+export default function CocktailView({
+  searchBarInputUser,
+  statsSearchBar,
+  setStatsSearchBar,
+}) {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s')
-      .then(({ data }) => {
-        setCocktails(data.drinks);
-      });
-  }, []);
+    if (statsSearchBar) {
+      axios
+        .get(
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBarInputUser}`
+        )
+        .then(({ data }) => {
+          setCocktails(data.drinks);
+        });
+    }
+    setStatsSearchBar(false);
+  }, [statsSearchBar]);
 
   return (
     <div>
@@ -30,3 +42,14 @@ export default function CocktailView() {
     </div>
   );
 }
+
+CocktailView.propTypes = {
+  searchBarInputUser: PropTypes.string,
+  statsSearchBar: PropTypes.bool,
+  setStatsSearchBar: PropTypes.func,
+};
+CocktailView.defaultProps = {
+  searchBarInputUser: '',
+  statsSearchBar: false,
+  setStatsSearchBar: () => {},
+};
