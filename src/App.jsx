@@ -1,5 +1,8 @@
+
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
 import CocktailView from './components/CocktailView';
+import CocktailDetail from './components/CocktailDetail';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -7,7 +10,8 @@ function App() {
   const [searchBarInputUser, setSearchBarInputUser] = useState('');
   const [statsSearchBar, setStatsSearchBar] = useState(false);
   return (
-    <>
+
+    <Router>
       <Header
         displaySearch
         searchBarInputUser={searchBarInputUser}
@@ -15,13 +19,21 @@ function App() {
         statsSearchBar={statsSearchBar}
         setStatsSearchBar={setStatsSearchBar}
       />
-      <CocktailView
+      <Switch>
+        <Route exact path="/">
+         <CocktailView
         searchBarInputUser={searchBarInputUser}
         statsSearchBar={statsSearchBar}
         setStatsSearchBar={setStatsSearchBar}
       />
+        </Route>
+        <Route path="/detail">
+          <CocktailDetail />
+        </Route>
+      </Switch>
+
       <Footer />
-    </>
+    </Router>
   );
 }
 
