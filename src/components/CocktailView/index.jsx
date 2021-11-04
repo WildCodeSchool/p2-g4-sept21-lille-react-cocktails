@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -22,6 +21,12 @@ export default function CocktailView({
         )
         .then(({ data }) => {
           setCocktails(data.drinks);
+        })
+        .catch((error) => {
+          if (error.response) {
+            window.alert('No cocktail found please try again !');
+            window.location.reload();
+          }
         });
     }
     setStatsSearchBar(false);
