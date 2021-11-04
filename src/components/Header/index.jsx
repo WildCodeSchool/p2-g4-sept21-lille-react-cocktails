@@ -30,7 +30,6 @@ export default function Header({
             setSearchBarInputUser={setSearchBarInputUser}
             statsSearchBar={statsSearchBar}
             setStatsSearchBar={setStatsSearchBar}
-            rest
             searchCount={searchCount}
             setSearchCount={setSearchCount}
           />
