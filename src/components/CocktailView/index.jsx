@@ -22,11 +22,9 @@ export default function CocktailView({
         .then(({ data }) => {
           setCocktails(data.drinks);
         })
-        .catch((error) => {
-          if (error.response) {
-            window.alert('No cocktail found please try again !');
-            window.location.reload();
-          }
+        .catch(() => {
+          window.alert('No cocktail found please try again !');
+          window.location.reload();
         });
     }
     setStatsSearchBar(false);
