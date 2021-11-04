@@ -2,7 +2,7 @@ form div {
   height: 4vh;
   display: flex;
   flex-direction: row-reverse;
-  box-shadow: 3px 4px 3px rgba(255, 184, 0, 0.76);
+  box-shadow: 2px 3px 3px rgba(255, 184, 0, 0.6);
   border-radius: 15px;
   border-collapse: separate;
   perspective: 1px;
@@ -10,21 +10,23 @@ form div {
 }
 
 input {
-  height: 100%;
   border: none;
 }
 
+input:focus {
+  outline: none;
+}
+
 form button img {
-  height: 80%;
+  height: 70%;
   opacity: 75%;
-  padding: 5%;
 }
 
 button {
   height: 100%;
   border: none;
-  background: white;
-  padding: 0 15px;
+  background: rgb(255, 255, 255);
+  padding: 0 6px 0 6px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -36,5 +38,10 @@ button {
 
   input {
     width: 35vw;
+    font-size: 20px;
+  }
+
+  .searchBar {
+    margin-left: calc(12vw - 2vh - 5rem - 2vh);
   }
 }
