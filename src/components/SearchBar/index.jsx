@@ -6,6 +6,8 @@ export default function SearchBar({
   searchBarInputUser,
   setSearchBarInputUser,
   setStatsSearchBar,
+  searchCount,
+  setSearchCount,
 }) {
   return (
     <div className="searchBar">
@@ -13,6 +15,7 @@ export default function SearchBar({
         onSubmit={(e) => {
           e.preventDefault();
           setStatsSearchBar(true);
+          setSearchCount(searchCount + 1);
         }}
       >
         <div>
@@ -38,9 +41,13 @@ SearchBar.propTypes = {
   searchBarInputUser: PropTypes.string,
   setSearchBarInputUser: PropTypes.func,
   setStatsSearchBar: PropTypes.func,
+  searchCount: PropTypes.number,
+  setSearchCount: PropTypes.func,
 };
 SearchBar.defaultProps = {
   searchBarInputUser: '',
   setSearchBarInputUser: () => {},
   setStatsSearchBar: () => {},
+  searchCount: 0,
+  setSearchCount: () => {},
 };

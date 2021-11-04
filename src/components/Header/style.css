@@ -1,9 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
 div.header {
-  background-color: #2b2a33;
   padding-bottom: 2vh;
   height: 25vh;
 }
