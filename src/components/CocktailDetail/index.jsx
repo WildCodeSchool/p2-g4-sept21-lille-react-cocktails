@@ -37,19 +37,17 @@ export default function CocktailDetail() {
   }
   return (
     <section className="cocktailDetail">
-      <div className="bottomRight">
-        <h2> {cocktail.strDrink} </h2>
-        <p>{cocktail.strInstructions}</p>
-      </div>
-      <div className="topLeft">
+      <h2> {cocktail.strDrink} </h2>
+      <p className="receipe">{cocktail.strInstructions}</p>
+      <div className="img">
         <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
-        <p>Ingredients :</p>
-        <ul>
-          {listing.map((ingredient) => {
-            return <li>{ingredient}</li>;
-          })}
-        </ul>
       </div>
+      <p className="ingredients">Ingredients :</p>
+      <ul>
+        {listing.map((ingredient) => {
+          return <li>{ingredient}</li>;
+        })}
+      </ul>
     </section>
   );
 }
