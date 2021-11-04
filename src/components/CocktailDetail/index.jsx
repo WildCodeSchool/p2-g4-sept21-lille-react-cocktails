@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 export default function CocktailDetail() {
   const { cocktailName } = useParams();
-  const [cocktail, setCocktail] = useState([]);
+  const [cocktailDetails, setCocktaildetails] = useState([]);
 
   useEffect(() => {
     axios
@@ -13,23 +13,23 @@ export default function CocktailDetail() {
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`
       )
       .then(({ data }) => {
-        setCocktail(data.drinks[0]);
+        setCocktaildetails(data.drinks[0]);
       });
   }, []);
 
-  const ingredientsListing = Object.keys(cocktail)
+  const ingredientsListing = Object.keys(cocktailDetails)
     .filter((key) => {
-      return key.includes('Ingredient') && cocktail[key] !== null;
+      return key.includes('Ingredient') && cocktailDetails[key] !== null;
     })
     .map((key) => {
-      return cocktail[key];
+      return cocktailDetails[key];
     });
-  const measuresListing = Object.keys(cocktail)
+  const measuresListing = Object.keys(cocktailDetails)
     .filter((key) => {
-      return key.includes('Measure') && cocktail[key] !== null;
+      return key.includes('Measure') && cocktailDetails[key] !== null;
     })
     .map((key) => {
-      return cocktail[key];
+      return cocktailDetails[key];
     });
   const listing = [];
   for (let i = 0; i < measuresListing.length; i += 1) {
@@ -38,11 +38,14 @@ export default function CocktailDetail() {
   return (
     <section className="cocktailDetail">
       <div className="bottomRight">
-        <h2> {cocktail.strDrink} </h2>
-        <p>{cocktail.strInstructions}</p>
+        <h2> {cocktailDetails.strDrink} </h2>
+        <p>{cocktailDetails.strInstructions}</p>
       </div>
       <div className="topLeft">
-        <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+        <img
+          src={cocktailDetails.strDrinkThumb}
+          alt={cocktailDetails.strDrink}
+        />
         <p>Ingredients :</p>
         <ul>
           {listing.map((ingredient) => {
