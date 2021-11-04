@@ -3,10 +3,10 @@ section.cocktailDetail {
   width: 90vw;
   height: 65vh;
   margin: auto;
+  margin-top: 27vh;
   border: 2px #ffc700 solid;
   border-radius: 30px;
   font-family: Ruda, sans-serif;
-  margin-top: 2vh;
   margin-bottom: 3vh;
   grid-template-columns: 42vw 48vw;
   grid-template-rows: 2.2rem calc(42vw - 2.2rem) 5rem calc(65vh - 5rem - 42vw);
@@ -55,7 +55,7 @@ section.cocktailDetail li {
   padding: 0.5rem;
 }
 
-h2 {
+section.cocktailDetail h2 {
   grid-area: cocktail;
   font-family: 'Rouge Script', sans-serif;
   font-size: 3rem;
@@ -74,6 +74,7 @@ p.receipe {
 @media only screen and (min-width: 600px) {
   section.cocktailDetail {
     width: 95vw;
+    margin-top: 30vh;
     height: 60vh;
     flex-direction: row-reverse;
     grid-template-columns: 30vh calc(95vw - 30vh);

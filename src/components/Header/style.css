@@ -1,4 +1,8 @@
 div.header {
+  top: 0;
+  background: #2b2a33;
+  width: 100%;
+  position: fixed;
   padding-bottom: 2vh;
   height: 25vh;
 }
