@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
-
 import './style.css';
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
 
 export default function RandomCocktailView() {
   const [cocktails, setCocktails] = useState([]);
@@ -19,7 +22,8 @@ export default function RandomCocktailView() {
   return (
     <div>
       <div className="cardContainer">
-        {cocktails.map((data) => {
+        {shuffle(cocktails)}
+        {cocktails.slice(0, 9).map((data) => {
           const path = `detail/${data.strDrink}`;
           return (
             <Link className="displayLink" to={path}>
