@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -18,7 +17,7 @@ export default function CocktailView({
     if (statsSearchBar) {
       axios
         .get(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchBarInputUser}`
+          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchBarInputUser}`
         )
         .then(({ data }) => {
           setCocktails(data.drinks);
