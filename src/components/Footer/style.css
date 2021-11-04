@@ -30,7 +30,7 @@ div.icons img {
     width: 10vw;
   }
 
-  p {
-    margin-right: 25vw;
+  div.footer p {
+    margin: 0 30vw 0 38vw;
   }
 }
