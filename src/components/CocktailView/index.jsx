@@ -21,6 +21,10 @@ export default function CocktailView({
         )
         .then(({ data }) => {
           setCocktails(data.drinks);
+        })
+        .catch(() => {
+          window.alert('No cocktail found please try again !');
+          window.location.reload();
         });
     }
     setStatsSearchBar(false);
