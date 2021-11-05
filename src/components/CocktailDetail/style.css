@@ -1,87 +1,101 @@
 section.cocktailDetail {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
   width: 90vw;
   height: 65vh;
   margin: auto;
+  margin-top: 27vh;
   border: 2px #ffc700 solid;
   border-radius: 30px;
-  overflow: hidden;
   font-family: Ruda, sans-serif;
-  margin-bottom: 10vh;
+  margin-bottom: 3vh;
+  grid-template-columns: 42vw 48vw;
+  grid-template-rows: 2.2rem calc(42vw - 2.2rem) 5rem calc(65vh - 5rem - 42vw);
+  grid-template-areas:
+    'image ingredientsTitle'
+    'image ingredients'
+    'cocktail cocktail'
+    'receipe receipe';
+  text-align: center;
+  overflow: hidden;
 }
 
-div.topLeft {
-  background: #ffc700;
-  display: flex;
-  height: 33%;
-  flex-flow: column wrap;
-  justify-content: space-around;
+section.cocktailDetail ul,
+p.ingredients,
+div.img {
+  background-color: #ffc700;
 }
 
-div.topLeft li {
-  padding: 1vh 0;
-}
-
-div.topLeft p {
-  font-weight: bold;
+div.img {
+  grid-area: image;
 }
 
 section.cocktailDetail img {
-  max-height: 100%;
+  max-height: 40vw;
   width: auto;
-  margin-right: auto;
+  border-radius: 30px 0 0 0;
+  margin: 1vw;
 }
 
-div.bottomRight {
+p.ingredients {
+  grid-area: ingredientsTitle;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+section.cocktailDetail ul {
+  grid-area: ingredients;
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-color: #ffc800 #ffdb57;
+}
+
+section.cocktailDetail li {
+  padding: 0.5rem;
+}
+
+section.cocktailDetail h2 {
+  grid-area: cocktail;
+  font-family: 'Rouge Script', sans-serif;
+  font-size: 3rem;
+  padding: 1rem;
   background: #46454f;
-  height: 67%;
   color: white;
 }
 
-h2 {
-  font-family: 'Rouge Script', sans-serif;
-  font-size: 3rem;
-  text-align: center;
+p.receipe {
+  grid-area: receipe;
+  background: #46454f;
+  color: white;
   padding: 1rem;
-}
-
-div.bottomRight p {
-  font-size: 1rem;
-  text-align: center;
-  padding: 3rem;
 }
 
 @media only screen and (min-width: 600px) {
   section.cocktailDetail {
+    width: 95vw;
+    margin-top: 30vh;
     height: 60vh;
     flex-direction: row-reverse;
-  }
-
-  div.topLeft {
-    display: block;
-    height: 100%;
-    width: 300px;
-    padding: 1rem;
-    text-align: center;
+    grid-template-columns: 30vh calc(95vw - 30vh);
+    grid-template-rows: 5rem calc(30vh - 5rem) 2rem calc(30vh - 2rem);
+    grid-template-areas:
+      'image cocktail'
+      'image receipe'
+      'ingredientsTitle receipe'
+      'ingredients receipe';
   }
 
   section.cocktailDetail img {
-    display: block;
-    max-height: 50%;
-    max-width: calc(300px - 2rem);
-    border-radius: 15px;
-    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    height: 28vh;
     width: auto;
-    margin: auto;
+    max-width: 30vh;
+    border-radius: 30px;
+    margin: 0.8vh 1.2vh 1.2vh 0.8vh;
+    box-shadow: 4px 4px 3px rgba(71, 67, 54, 0.76);
   }
 
-  div.topLeft p {
-    margin-top: 1rem;
-    padding: 1rem 0;
-  }
-
-  div.bottomRight {
-    height: 100%;
+  section.cocktailDetail ul {
+    padding-top: 1rem;
   }
 }

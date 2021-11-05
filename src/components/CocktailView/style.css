@@ -1,4 +1,5 @@
 .cardContainer {
+  margin-top: 25vh;
   background-color: #2b2a33;
 }
 
@@ -8,6 +9,7 @@
 
 @media only screen and (min-width: 600px) {
   .cardContainer {
+    margin-top: 30vh;
     background-color: #2b2a33;
     display: flex;
     flex-direction: row;

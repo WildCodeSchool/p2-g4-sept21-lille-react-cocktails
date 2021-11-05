@@ -60,11 +60,11 @@
   .mainCard {
     width: 26vw;
     height: 40vh;
-    min-height: 600px;
+    min-height: 68vh;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    margin-top: 45px;
+    margin-top: 0;
     border-radius: 20px 20px 0 0;
     background: #ffc700;
   }

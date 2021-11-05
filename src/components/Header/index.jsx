@@ -1,5 +1,6 @@
 import './style.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
 import Favorites from '../Favorites';
 import logo1 from '../../assets/logo1.png';
@@ -19,9 +20,11 @@ export default function Header({
         <div className="title">
           <h1>Shaker</h1>
         </div>
-        <div className="logo">
-          <img src={logo1} alt="Logo" />
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img src={logo1} alt="Logo" />
+          </div>
+        </Link>
       </div>
       <div className="bottom">
         {displaySearch && (
