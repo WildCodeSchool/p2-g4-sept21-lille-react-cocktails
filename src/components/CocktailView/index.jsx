@@ -14,33 +14,44 @@ export default function CocktailView({
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
+    let apiUrl = '';
     if (statsSearchBar) {
+      apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchBarInputUser}`;
+    } else {
+      apiUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`;
+    }
+
+    if (statsSearchBar || !cocktails.length) {
       axios
-        .get(
-          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchBarInputUser}`
-        )
+        .get(apiUrl)
         .then(({ data }) => {
+          if (!data.drinks) {
+            throw Error('No cocktails found');
+          }
           setCocktails(data.drinks);
         })
         .catch(() => {
           window.alert('No cocktail found please try again !');
-          window.location.reload();
+        })
+        .finally(() => {
+          setStatsSearchBar(false);
         });
     }
-    setStatsSearchBar(false);
   }, [statsSearchBar]);
 
   return (
     <div>
       <div className="cardContainer">
-        {cocktails.map((data) => {
-          const path = `detail/${data.strDrink}`;
-          return (
-            <Link className="displayLink" to={path}>
-              <CocktailCard key={data.idDrink} {...data} />
-            </Link>
-          );
-        })}
+        {cocktails
+          .sort(() => Math.random() - 0.5)
+          .map((data) => {
+            const path = `detail/${data.strDrink}`;
+            return (
+              <Link className="displayLink" to={path}>
+                <CocktailCard key={data.idDrink} {...data} />
+              </Link>
+            );
+          })}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { useState } from 'react';
-import RandomCocktailView from './components/RandomCocktailView';
+// import RandomCocktailView from './components/RandomCocktailView';
 import CocktailView from './components/CocktailView';
 import CocktailDetail from './components/CocktailDetail';
 import Header from './components/Header';
@@ -24,21 +24,16 @@ function App() {
       />
       <Switch>
         <Route exact path="/">
-          {searchCount === 0 ? (
-            <RandomCocktailView />
-          ) : (
-            <CocktailView
-              searchBarInputUser={searchBarInputUser}
-              statsSearchBar={statsSearchBar}
-              setStatsSearchBar={setStatsSearchBar}
-            />
-          )}
+          <CocktailView
+            searchBarInputUser={searchBarInputUser}
+            statsSearchBar={statsSearchBar}
+            setStatsSearchBar={setStatsSearchBar}
+          />
         </Route>
         <Route path="/detail/:cocktailName">
           <CocktailDetail />
         </Route>
       </Switch>
-
       <Footer />
     </Router>
   );
