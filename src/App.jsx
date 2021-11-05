@@ -14,7 +14,6 @@ function App() {
   return (
     <Router>
       <Header
-        displaySearch
         searchBarInputUser={searchBarInputUser}
         setSearchBarInputUser={setSearchBarInputUser}
         statsSearchBar={statsSearchBar}
@@ -38,7 +37,6 @@ function App() {
           <CocktailDetail />
         </Route>
       </Switch>
-
       <Footer />
     </Router>
   );
