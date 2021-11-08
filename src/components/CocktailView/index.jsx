@@ -12,7 +12,6 @@ export default function CocktailView({
   setStatsSearchBar,
 }) {
   const [cocktails, setCocktails] = useState([]);
-
   useEffect(() => {
     if (statsSearchBar) {
       axios

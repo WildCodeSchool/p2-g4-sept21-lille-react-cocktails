@@ -27,16 +27,14 @@ export default function Header({
         </Link>
       </div>
       <div className="bottom">
-        {displaySearch && (
-          <SearchBar
-            searchBarInputUser={searchBarInputUser}
-            setSearchBarInputUser={setSearchBarInputUser}
-            statsSearchBar={statsSearchBar}
-            setStatsSearchBar={setStatsSearchBar}
-            searchCount={searchCount}
-            setSearchCount={setSearchCount}
-          />
-        )}
+        <SearchBar
+          searchBarInputUser={searchBarInputUser}
+          setSearchBarInputUser={setSearchBarInputUser}
+          statsSearchBar={statsSearchBar}
+          setStatsSearchBar={setStatsSearchBar}
+          searchCount={searchCount}
+          setSearchCount={setSearchCount}
+        />
         {displaySearch ? <Favorites /> : null}
       </div>
     </div>
