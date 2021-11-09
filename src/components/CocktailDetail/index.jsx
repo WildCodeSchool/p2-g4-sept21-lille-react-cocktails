@@ -40,8 +40,10 @@ export default function CocktailDetail() {
     <section className="cocktailDetail">
       <h2> {cocktailDetails.strDrink} </h2>
       <p className="receipe">
-        {cocktailDetails.strInstructions}
-        <Carousel />
+        <Carousel
+          key={cocktailDetails.id}
+          instructionString={cocktailDetails.strInstructions}
+        />
       </p>
 
       <div className="img">
