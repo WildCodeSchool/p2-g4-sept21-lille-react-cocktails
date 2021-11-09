@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
@@ -12,6 +11,14 @@ export default function CocktailView({
   setStatsSearchBar,
 }) {
   const [cocktails, setCocktails] = useState([]);
+  const [favorites, setFavorites] = useState([]);
+  let getArray = [];
+  getArray = JSON.parse(localStorage.getItem('favorites')) || [];
+  useEffect(() => {
+    setFavorites([...getArray]);
+  }, []);
+  console.log('coucou');
+
   useEffect(() => {
     if (statsSearchBar) {
       axios
@@ -35,9 +42,17 @@ export default function CocktailView({
         {cocktails.map((data) => {
           const path = `detail/${data.strDrink}`;
           return (
-            <Link className="displayLink" to={path}>
-              <CocktailCard key={data.idDrink} {...data} />
-            </Link>
+            <>
+              <Link className="displayLink" to={path}>
+                <CocktailCard
+                  getArray={getArray}
+                  favorites={favorites}
+                  setFavorites={setFavorites}
+                  key={data.idDrink}
+                  {...data}
+                />
+              </Link>
+            </>
           );
         })}
       </div>
