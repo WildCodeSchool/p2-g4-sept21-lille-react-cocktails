@@ -1,35 +1,110 @@
-.footer {
+#footer {
+  padding: 60px 0;
+  text-align: center;
+  background-color: #d1d1d1;
   display: flex;
-  justify-content: space-around;
-  height: 5vh;
-  align-items: center;
-  color: white;
-  font-family: ruda, sans-serif;
-  font-size: 0.7rem;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 1vh;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-div.icons {
+#footer h2 {
+  /* position: relative; */
+  padding: 0 0 15px;
+  font-size: 60px;
+  font-family: 'Dancing Script', cursive;
+}
+
+#footer h4 {
+  /* position: relative; */
+  padding: 0 0 15px;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: 'Dancing Script', cursive;
+  color: #fff;
+}
+
+#footer p {
+  font-size: 15px;
+  padding: 0;
+  margin: 25px 0 40px;
+  font-family: Ruda, sans-serif;
+}
+
+#footer span {
+  font-size: 15px;
+  padding: 0;
+  margin: 25px 0 40px;
+  font-family: Ruda, sans-serif;
+  color: #ffc107;
+}
+
+.memberImage > img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+#footer .row {
   display: flex;
-  justify-content: space-between;
-  width: 25vw;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-div.icons img {
-  height: 2vh;
+#footer .member {
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 15px 0 15px 0;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
-@media only screen and (min-width: 600px) {
-  .footer {
-    justify-content: flex-end;
-    font-size: 1rem;
+#footer .member .member-info {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  transition: 0.4s;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#footer .member:hover .member-info {
+  left: 0;
+  right: 0;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.social-links a {
+  transition: none;
+  color: #fff;
+}
+
+.social-links a:hover {
+  color: #ffc107;
+}
+
+.linkSocial {
+  height: 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #footer .row {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
-  div.icons {
-    margin-right: 2vw;
-    width: 10vw;
-  }
-
-  div.footer p {
-    margin: 0 30vw 0 38vw;
+  #footer .member {
+    margin: auto;
+    margin-top: 3vh;
   }
 }
