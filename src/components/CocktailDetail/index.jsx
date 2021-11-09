@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
+import Carousel from '../Carousel';
 
 export default function CocktailDetail() {
   const { cocktailName } = useParams();
@@ -38,7 +39,11 @@ export default function CocktailDetail() {
   return (
     <section className="cocktailDetail">
       <h2> {cocktailDetails.strDrink} </h2>
-      <p className="receipe">{cocktailDetails.strInstructions}</p>
+      <p className="receipe">
+        {cocktailDetails.strInstructions}
+        <Carousel />
+      </p>
+
       <div className="img">
         <img
           src={cocktailDetails.strDrinkThumb}
@@ -46,6 +51,7 @@ export default function CocktailDetail() {
         />
       </div>
       <p className="ingredients">Ingredients :</p>
+
       <ul>
         {listing.map((ingredient) => {
           return <li>{ingredient}</li>;
