@@ -25,14 +25,14 @@ export default function Cocktail({ instructionString }) {
   return (
     <section className="slider">
       <FaArrowCircleLeft
-        className={activSlice !== 0 ? 'left-arrow active' : 'left-arrow'}
+        className={activSlice !== 0 ? 'left-arrow active wiggle' : 'left-arrow'}
         onClick={prevSlice}
       />
       <FaArrowCircleRight
         className={
           activSlice === instructions.length - 1
             ? 'right-arrow'
-            : 'right-arrow active'
+            : 'right-arrow active wiggle'
         }
         onClick={nextSlice}
       />
