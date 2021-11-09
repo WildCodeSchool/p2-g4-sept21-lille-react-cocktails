@@ -1,5 +1,3 @@
-// import liIcon from '../../assets/linkedin.png';
-// import gitIcon from '../../assets/github.png';
 import './style.css';
 import pierre from '../../assets/Pierre.png';
 import luigi from '../../assets/Luigi.png';
