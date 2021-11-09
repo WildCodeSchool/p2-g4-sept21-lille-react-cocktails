@@ -9,15 +9,15 @@ export default function CocktailView({
   searchBarInputUser,
   statsSearchBar,
   setStatsSearchBar,
+  favorites,
+  setFavorites,
 }) {
   const [cocktails, setCocktails] = useState([]);
-  const [favorites, setFavorites] = useState([]);
   let getArray = [];
   getArray = JSON.parse(localStorage.getItem('favorites')) || [];
   useEffect(() => {
     setFavorites([...getArray]);
   }, []);
-  console.log('coucou');
 
   useEffect(() => {
     if (statsSearchBar) {
@@ -45,7 +45,6 @@ export default function CocktailView({
             <>
               <Link className="displayLink" to={path}>
                 <CocktailCard
-                  getArray={getArray}
                   favorites={favorites}
                   setFavorites={setFavorites}
                   key={data.idDrink}
@@ -64,9 +63,13 @@ CocktailView.propTypes = {
   searchBarInputUser: PropTypes.string,
   statsSearchBar: PropTypes.bool,
   setStatsSearchBar: PropTypes.func,
+  favorites: PropTypes.arrayOf(PropTypes.string),
+  setFavorites: PropTypes.func,
 };
 CocktailView.defaultProps = {
   searchBarInputUser: '',
   statsSearchBar: false,
   setStatsSearchBar: () => {},
+  favorites: [],
+  setFavorites: () => {},
 };

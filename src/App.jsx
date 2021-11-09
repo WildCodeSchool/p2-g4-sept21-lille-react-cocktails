@@ -1,5 +1,5 @@
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import RandomCocktailView from './components/RandomCocktailView';
 import CocktailView from './components/CocktailView';
 import CocktailDetail from './components/CocktailDetail';
@@ -11,6 +11,13 @@ function App() {
   const [searchBarInputUser, setSearchBarInputUser] = useState('');
   const [statsSearchBar, setStatsSearchBar] = useState(false);
   const [searchCount, setSearchCount] = useState(0);
+  const [favorites, setFavorites] = useState([]);
+
+  let getArray = [];
+  getArray = JSON.parse(localStorage.getItem('favorites')) || [];
+  useEffect(() => {
+    setFavorites([...getArray]);
+  }, []);
   return (
     <Router>
       <Header
@@ -24,12 +31,19 @@ function App() {
       <Switch>
         <Route exact path="/">
           {searchCount === 0 ? (
-            <RandomCocktailView />
+            <RandomCocktailView
+              getArray={getArray}
+              favorites={favorites}
+              setFavorites={setFavorites}
+            />
           ) : (
             <CocktailView
               searchBarInputUser={searchBarInputUser}
               statsSearchBar={statsSearchBar}
               setStatsSearchBar={setStatsSearchBar}
+              getArray={getArray}
+              favorites={favorites}
+              setFavorites={setFavorites}
             />
           )}
         </Route>

@@ -61,7 +61,6 @@ Heartbtn.propTypes = {
 
 Heartbtn.defaultProps = {
   cocktailName: '',
-
   favorites: [],
   setFavorites: () => {},
 };
