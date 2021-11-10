@@ -7,13 +7,13 @@ export default function Cocktail({ instructionString }) {
   const [instructions, setInstruction] = useState([]);
   const [activSlice, setActivSlice] = useState(0);
 
-  const nextSlice = () => {
+  const nextSlide = () => {
     setActivSlice(
       activSlice < instructions.length - 1 ? activSlice + 1 : activSlice
     );
   };
 
-  const prevSlice = () => {
+  const prevSlide = () => {
     setActivSlice(activSlice !== 0 ? activSlice - 1 : activSlice);
   };
 
@@ -25,7 +25,7 @@ export default function Cocktail({ instructionString }) {
     <section className="slider">
       <FaArrowCircleLeft
         className={activSlice !== 0 ? 'left-arrow active wiggle' : 'left-arrow'}
-        onClick={prevSlice}
+        onClick={prevSlide}
       />
       <FaArrowCircleRight
         className={
@@ -33,7 +33,7 @@ export default function Cocktail({ instructionString }) {
             ? 'right-arrow'
             : 'right-arrow active wiggle'
         }
-        onClick={nextSlice}
+        onClick={nextSlide}
       />
       {instructions.map((slide, id) => {
         return (
