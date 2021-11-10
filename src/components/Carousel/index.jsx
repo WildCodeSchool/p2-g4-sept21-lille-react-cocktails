@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
-import './style.css';
+import { useEffect, useState } from 'react';
 import { FaArrowCircleRight, FaArrowCircleLeft } from 'react-icons/fa';
+import './style.css';
 
 export default function Cocktail({ instructionString }) {
   const [instructions, setInstruction] = useState([]);
