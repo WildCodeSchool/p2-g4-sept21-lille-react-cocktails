@@ -44,7 +44,7 @@ export default function Footer() {
                 <img className="linkSocial" src={github} alt="logo github" />
               </a>
 
-              <a href="/">
+              <a href="https://www.linkedin.com/in/victor-morel-5265881b3/">
                 <img className="linkSocial" src={linkedin} alt="logo github" />
               </a>
             </div>
