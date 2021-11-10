@@ -4,10 +4,10 @@ section.cocktailDetail {
   height: 65vh;
   margin: auto;
   margin-top: 27vh;
+  margin-bottom: 10vh;
   border: 2px #ffc700 solid;
   border-radius: 30px;
   font-family: Ruda, sans-serif;
-  margin-bottom: 3vh;
   grid-template-columns: 42vw 48vw;
   grid-template-rows: 2.2rem calc(42vw - 2.2rem) 5rem calc(65vh - 5rem - 42vw);
   grid-template-areas:
