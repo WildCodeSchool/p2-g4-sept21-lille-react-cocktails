@@ -61,7 +61,7 @@
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
-#footer .member .member-info {
+#footer .member .memberInfo {
   display: block;
   position: absolute;
   bottom: 0;
@@ -71,23 +71,23 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-#footer .member:hover .member-info {
+#footer .member:hover .memberInfo {
   left: 0;
   right: 0;
 }
 
-.social-links {
+.socialLinks {
   margin-top: 15px;
   display: flex;
   justify-content: space-evenly;
 }
 
-.social-links a {
+.socialLinks a {
   transition: none;
   color: #fff;
 }
 
-.social-links a:hover {
+.socialLinks a:hover {
   color: #ffc107;
 }
 

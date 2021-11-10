@@ -18,10 +18,10 @@ export default function Footer() {
           <div className="memberImage">
             <img src={heloise} alt="pictureOfMember" />
           </div>
-          <div className="member-info">
+          <div className="memberInfo">
             <h4>Heloise</h4>
             <span>Web Developer</span>
-            <div className="social-links">
+            <div className="socialLinks">
               <a href="https://github.com/hloz">
                 <img className="linkSocial" src={github} alt="logo github" />
               </a>
@@ -36,10 +36,10 @@ export default function Footer() {
           <div className="memberImage">
             <img src={victore} alt="pictureOfMember" />
           </div>
-          <div className="member-info">
+          <div className="memberInfo">
             <h4>Victor</h4>
             <span>Web Developer</span>
-            <div className="social-links">
+            <div className="socialLinks">
               <a href="https://github.com/Morel-Victor">
                 <img className="linkSocial" src={github} alt="logo github" />
               </a>
@@ -54,11 +54,11 @@ export default function Footer() {
           <div className="memberImage">
             <img src={luigi} alt="pictureOfMember" />
           </div>
-          <div className="member-info">
+          <div className="memberInfo">
             <h4>Luigi</h4>
             <span>Web Developer</span>
 
-            <div className="social-links">
+            <div className="socialLinks">
               <a href="https://github.com/LuigiMenez">
                 <img className="linkSocial" src={github} alt="logo github" />
               </a>
@@ -73,10 +73,10 @@ export default function Footer() {
           <div className="memberImage">
             <img src={pierre} alt="pictureOfMember" />
           </div>
-          <div className="member-info">
+          <div className="memberInfo">
             <h4>Pierre</h4>
             <span>Web Developer</span>
-            <div className="social-links">
+            <div className="socialLinks">
               <a href="https://github.com/PierreGoe">
                 <img className="linkSocial" src={github} alt="logo github" />
               </a>
