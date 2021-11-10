@@ -16,7 +16,7 @@ export default function CocktailCard({
         </div>
         <h2 className="titleCard">{strDrink}</h2>
         <HeartBtn
-          cocktailName={strDrink}
+          cocktail={{ name: strDrink, picture: strDrinkThumb }}
           favorites={favorites}
           setFavorites={setFavorites}
         />
@@ -28,7 +28,6 @@ export default function CocktailCard({
 CocktailCard.propTypes = {
   strDrink: PropTypes.string,
   strDrinkThumb: PropTypes.string,
-
   favorites: PropTypes.arrayOf(PropTypes.string),
   setFavorites: PropTypes.func,
 };

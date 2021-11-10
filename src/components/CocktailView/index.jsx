@@ -13,11 +13,6 @@ export default function CocktailView({
   setFavorites,
 }) {
   const [cocktails, setCocktails] = useState([]);
-  let getArray = [];
-  getArray = JSON.parse(localStorage.getItem('favorites')) || [];
-  useEffect(() => {
-    setFavorites([...getArray]);
-  }, []);
 
   useEffect(() => {
     if (statsSearchBar) {

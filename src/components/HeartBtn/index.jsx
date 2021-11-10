@@ -4,21 +4,19 @@ import Heart from '../../assets/coeurvide.png';
 import fullHeart from '../../assets/coeurtoutjaune.png';
 import './style.css';
 
-export default function Heartbtn({ cocktailName, favorites, setFavorites }) {
+export default function Heartbtn({ cocktail, favorites, setFavorites }) {
   const addFav = () => {
     const array = favorites;
-
     let addArray = true;
     array.map((favorite, index) => {
-      if (favorite === cocktailName) {
+      if (favorite.name === cocktail.name) {
         addArray = false;
-
         return array.splice(index, 1);
       }
       return array;
     });
     if (addArray) {
-      array.push(cocktailName);
+      array.push(cocktail);
     }
     setFavorites([...array]);
 
@@ -26,7 +24,7 @@ export default function Heartbtn({ cocktailName, favorites, setFavorites }) {
   };
   return (
     <>
-      {favorites.includes(cocktailName) ? (
+      {favorites.some((favorite) => favorite.name === cocktail.name) ? (
         <button
           type="button"
           className="fullHeart"
@@ -54,13 +52,13 @@ export default function Heartbtn({ cocktailName, favorites, setFavorites }) {
 }
 
 Heartbtn.propTypes = {
-  cocktailName: PropTypes.string,
+  cocktail: PropTypes.shape,
   favorites: PropTypes.arrayOf(PropTypes.string),
   setFavorites: PropTypes.func,
 };
 
 Heartbtn.defaultProps = {
-  cocktailName: '',
+  cocktail: {},
   favorites: [],
   setFavorites: () => {},
 };
