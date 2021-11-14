@@ -4,91 +4,90 @@
 }
 
 .mainCard {
-  width: 80vw;
-  height: 38vw;
+  width: 85vw;
+  height: 30vw;
   display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas:
-    'title picture'
-    'ingredient picture'
-    'ingredient logo';
+  grid-template-columns: 2.1fr 1fr;
+  grid-template-areas: 'title picture';
   margin: auto;
-  background: linear-gradient(rgba(255, 200, 0, 0.76), rgba(43, 42, 51, 1));
-  margin-bottom: 20px;
-  border-radius: 20px 20px 0 20px;
+  margin-bottom: 40px;
+  border-radius: 15px 15px 15px 15px;
   color: white;
+  background: rgba(255, 200, 0, 0.836);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .imgCard {
   grid-area: picture;
   grid-column-start: 2;
-  opacity: 100%;
+  padding-top: 3px;
+  padding-right: 3px;
 }
 
 .imgCard img {
   width: 100%;
-  height: auto;
-  border-radius: 0% 10% 0% 10%;
-  opacity: 100%;
-}
-
-.ingredientCard {
-  grid-area: ingredient;
-  grid-column-start: 1;
-  font-size: 16px;
-  text-align: left;
-  padding-right: 5px;
-  padding-left: 15px;
+  height: 100%;
+  border-radius: 15px 15px 15px 15px;
+  padding-top: 2px;
+  padding-right: 2px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .titleCard {
+  height: 100%;
   grid-area: title;
-  grid-row-start: 1;
+  grid-row-start: 1.3;
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-top: 25px;
   font-family: 'Dancing Script', cursive;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 12px;
   font-size: 30px;
   text-align: start;
   text-transform: capitalize;
-  opacity: 100%;
   color: white;
 }
 
 @media only screen and (min-width: 600px) {
   .mainCard {
-    width: 26vw;
-    height: 40vh;
+    height: 30vh;
     min-height: 68vh;
+    max-height: 610px;
     max-width: 400px;
     display: flex;
     flex-direction: column;
     margin-top: 0;
     border-radius: 20px 20px 0 0;
-    background: #ffc700;
+    background: linear-gradient(rgba(255, 200, 0, 0.87), rgba(43, 42, 51, 1));
+    box-shadow: none;
   }
 
   .imgCard {
     width: 100%;
+    padding-top: 0px;
+    padding-right: 0px;
   }
 
   .imgCard img {
     width: 100%;
     border-radius: 20px 0 0 0;
+    padding-top: 0px;
+    padding-right: 0px;
   }
 
   .titleCard {
     width: 100%;
+    height: 100%;
     text-align: center;
     font-size: 45px;
-    padding-top: 20px;
-    padding-bottom: 25px;
+    padding-top: 25px;
+    margin-bottom: 3px;
+    background: linear-gradient(rgba(255, 200, 0, 0.87), rgba(43, 42, 51, 1));
   }
+}
 
-  .ingredientCard {
-    width: 100%;
-    font-size: 25px;
-    text-align: center;
+@media only screen and (min-width: 1400px) {
+  .mainCard {
+    min-height: 610px;
+    max-width: 400px;
   }
 }
