@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
+import Carousel from '../Carousel';
 import PropTypes from 'prop-types';
+
 
 export default function CocktailDetail({ setStatsSearchBar }) {
   const { cocktailName } = useParams();
@@ -40,7 +42,13 @@ export default function CocktailDetail({ setStatsSearchBar }) {
   return (
     <section className="cocktailDetail">
       <h2> {cocktailDetails.strDrink} </h2>
-      <p className="receipe">{cocktailDetails.strInstructions}</p>
+      <p className="receipe">
+        <Carousel
+          key={cocktailDetails.id}
+          instructionString={cocktailDetails.strInstructions}
+        />
+      </p>
+
       <div className="img">
         <img
           src={cocktailDetails.strDrinkThumb}
@@ -48,6 +56,7 @@ export default function CocktailDetail({ setStatsSearchBar }) {
         />
       </div>
       <p className="ingredients">Ingredients :</p>
+
       <ul>
         {listing.map((ingredient) => {
           return <li>{ingredient}</li>;
