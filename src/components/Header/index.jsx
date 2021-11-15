@@ -2,11 +2,11 @@ import './style.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar';
-import Favorites from '../Favorites';
+
 import logo1 from '../../assets/logo1.png';
+import favoritesIcon from '../../assets/coeurtoutjaune.png';
 
 export default function Header({
-  displaySearch,
   searchBarInputUser,
   setSearchBarInputUser,
   statsSearchBar,
@@ -35,14 +35,19 @@ export default function Header({
           searchCount={searchCount}
           setSearchCount={setSearchCount}
         />
-        {displaySearch ? <Favorites /> : null}
+        <Link to="/favorites">
+          <img
+            className="favorisIcon"
+            src={favoritesIcon}
+            alt="Favourites icon"
+          />
+        </Link>
       </div>
     </div>
   );
 }
 
 Header.propTypes = {
-  displaySearch: PropTypes.bool,
   searchBarInputUser: PropTypes.string,
   setSearchBarInputUser: PropTypes.func,
   statsSearchBar: PropTypes.bool,
@@ -51,7 +56,6 @@ Header.propTypes = {
   setSearchCount: PropTypes.func,
 };
 Header.defaultProps = {
-  displaySearch: false,
   searchBarInputUser: '',
   setSearchBarInputUser: () => {},
   statsSearchBar: false,

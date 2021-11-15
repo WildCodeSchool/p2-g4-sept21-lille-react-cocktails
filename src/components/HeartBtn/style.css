@@ -1,0 +1,11 @@
+.fullHeart img,
+.heart img {
+  height: 20px;
+  width: auto;
+}
+
+.fullHeart,
+.heart {
+  height: 20px;
+  width: auto;
+}

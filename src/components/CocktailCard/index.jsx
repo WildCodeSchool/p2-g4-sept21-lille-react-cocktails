@@ -1,17 +1,13 @@
 import PropTypes from 'prop-types';
+import HeartBtn from '../HeartBtn';
 import './style.css';
 
-export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
-  const listing = Object.keys(rest)
-    .filter((key) => {
-      return key.includes('Ingredient') && rest[key] !== null;
-    })
-    .map((key) => {
-      return rest[key];
-    })
-    .join(', ')
-    .replace(/, ([^,]*)$/, '');
-
+export default function CocktailCard({
+  strDrink,
+  strDrinkThumb,
+  favorites,
+  setFavorites,
+}) {
   return (
     <div>
       <div className="mainCard">
@@ -19,7 +15,11 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
           <img src={strDrinkThumb} alt={strDrink} />
         </div>
         <h2 className="titleCard">{strDrink}</h2>
-        <p className="ingredientCard">{listing}</p>
+        <HeartBtn
+          cocktail={{ name: strDrink, picture: strDrinkThumb }}
+          favorites={favorites}
+          setFavorites={setFavorites}
+        />
       </div>
     </div>
   );
@@ -28,10 +28,12 @@ export default function CocktailCard({ strDrink, strDrinkThumb, ...rest }) {
 CocktailCard.propTypes = {
   strDrink: PropTypes.string,
   strDrinkThumb: PropTypes.string,
-  strIngredients: PropTypes.string,
+  favorites: PropTypes.arrayOf(PropTypes.string),
+  setFavorites: PropTypes.func,
 };
 CocktailCard.defaultProps = {
   strDrink: '',
   strDrinkThumb: '',
-  strIngredients: '',
+  favorites: [],
+  setFavorites: () => {},
 };

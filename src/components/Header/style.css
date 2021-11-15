@@ -80,6 +80,11 @@ div.bottom {
   height: 4vh;
 }
 
+.favorisIcon {
+  display: block;
+  height: 4vh;
+}
+
 @media only screen and (min-width: 600px) {
   div.header {
     height: 30vh;

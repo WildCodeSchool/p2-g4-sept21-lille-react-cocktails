@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
 
 import './style.css';
 
-export default function RandomCocktailView() {
+export default function RandomCocktailView({ favorites, setFavorites }) {
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
@@ -23,7 +24,12 @@ export default function RandomCocktailView() {
           const path = `detail/${data.strDrink}`;
           return (
             <Link className="displayLink" to={path}>
-              <CocktailCard key={data.idDrink} {...data} />
+              <CocktailCard
+                key={data.idDrink}
+                {...data}
+                favorites={favorites}
+                setFavorites={setFavorites}
+              />
             </Link>
           );
         })}
@@ -31,3 +37,12 @@ export default function RandomCocktailView() {
     </div>
   );
 }
+
+RandomCocktailView.propTypes = {
+  favorites: PropTypes.arrayOf(PropTypes.string),
+  setFavorites: PropTypes.func,
+};
+RandomCocktailView.defaultProps = {
+  favorites: [],
+  setFavorites: () => {},
+};
