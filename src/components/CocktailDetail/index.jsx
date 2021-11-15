@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default function CocktailDetail() {
+export default function CocktailDetail({ setStatsSearchBar }) {
   const { cocktailName } = useParams();
   const [cocktailDetails, setCocktaildetails] = useState([]);
 
@@ -15,6 +16,7 @@ export default function CocktailDetail() {
       .then(({ data }) => {
         setCocktaildetails(data.drinks[0]);
       });
+    return setStatsSearchBar(true);
   }, []);
 
   const ingredientsListing = Object.keys(cocktailDetails)
@@ -54,3 +56,10 @@ export default function CocktailDetail() {
     </section>
   );
 }
+
+CocktailDetail.propTypes = {
+  setStatsSearchBar: PropTypes.func,
+};
+CocktailDetail.defaultProps = {
+  setStatsSearchBar: () => {},
+};
