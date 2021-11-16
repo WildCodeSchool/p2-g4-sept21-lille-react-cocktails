@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
-import Carousel from '../Carousel';
 import PropTypes from 'prop-types';
-
+import Carousel from '../Carousel';
 
 export default function CocktailDetail({ setStatsSearchBar }) {
   const { cocktailName } = useParams();
