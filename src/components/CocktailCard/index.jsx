@@ -15,7 +15,6 @@ export default function CocktailCard({
           <img src={strDrinkThumb} alt={strDrink} />
         </div>
         <h2 className="titleCard">{strDrink}</h2>
-
         <HeartBtn
           className="hearts"
           cocktail={{ name: strDrink, picture: strDrinkThumb }}
