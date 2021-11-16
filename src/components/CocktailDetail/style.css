@@ -59,7 +59,8 @@ section.cocktailDetail h2 {
   grid-area: cocktail;
   font-family: 'Rouge Script', sans-serif;
   font-size: 3rem;
-  padding: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
   background: #46454f;
   color: white;
 }
