@@ -1,40 +1,44 @@
-div.header {
+* {
+  box-sizing: border-box;
+}
+.header {
+  display: grid;
+  align-items: center;
   top: 0;
   background: #2b2a33;
-  width: 100%;
   position: fixed;
-  padding-bottom: 2vh;
   height: 25vh;
+  width: 100vw;
   z-index: 10;
+  grid-template-columns: 12.5% 12.5% 50% 12.5% 12.5%;
+  grid-template-rows: 50% 30%;
+  grid-template-areas:
+    'logo logo title . . '
+    ' . searchBar searchBar searchBar heart';
+  margin-bottom: 2vh;
 }
-
-div.top h1 {
-  font-size: 5rem;
+.header h1 {
+  grid-area: title;
   text-align: center;
+  font-size: 5rem;
   font-family: 'rouge script', sans-serif;
   color: white;
   align-self: center;
 }
 
-div.title {
-  display: flex;
-  width: 38vw;
-  justify-content: center;
-  margin-left: calc(31vw - 2vh - 5rem - 2vh);
-}
-
-div.logo {
+.logo {
+  grid-area: logo;
+  margin: auto;
   border: solid #ffc700 2px;
   border-radius: 50%;
-  padding: 1rem;
-  margin: 2vh;
   width: 5rem;
   height: 5rem;
-  margin-top: 1.5rem;
+  padding: 0.5rem;
 }
 
-div.logo img {
+.logo img {
   max-width: 100%;
+  margin: auto;
 }
 
 div.logo:hover img {
@@ -66,43 +70,40 @@ div.logo:hover img {
     transform: translate3d(4px, 0, 0);
   }
 }
-
-div.top {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  height: 65%;
+.searchBar {
+  grid-area: searchBar;
 }
-
-div.bottom {
-  display: flex;
-  justify-content: center;
-  height: 4vh;
-}
-
 .favorisIcon {
-  display: block;
+  grid-area: heart;
+  margin: -2vw;
+}
+.favorisIcon img {
   height: 4vh;
 }
 
 @media only screen and (min-width: 600px) {
-  div.header {
+  .header {
     height: 30vh;
+    grid-template-rows: 55% 45%;
+    grid-template-areas:
+      'logo logo title . . '
+      ' logo logo searchBar heart .';
   }
-
-  div.logo {
-    margin-top: 5vh;
-    margin-left: 8vw;
+  .logo {
     width: 9rem;
     height: 9rem;
+    padding: 1rem;
   }
-
-  div.title {
-    width: 38vw;
-    margin-left: calc(31vw - 8vw - 2vh - 9rem - 2vh);
-  }
-
-  div.top h1 {
+  .header h1 {
+    padding-top: 1vh;
+    margin: auto;
     font-size: 7rem;
+    width: 38vw;
+  }
+  .favorisIcon {
+    margin: auto;
+  }
+  .favorisIcon img {
+    height: 6vh;
   }
 }

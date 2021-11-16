@@ -15,18 +15,14 @@ export default function Header({
   setSearchCount,
 }) {
   return (
-    <div className="header">
-      <div className="top">
-        <div className="title">
-          <h1>Shaker</h1>
-        </div>
+    <header className="header">
+      <h1>Shaker</h1>
+      <div className="logo">
         <Link to="/">
-          <div className="logo">
-            <img src={logo1} alt="Logo" />
-          </div>
+          <img src={logo1} alt="Logo" />
         </Link>
       </div>
-      <div className="bottom">
+      <div className="searchBar">
         <SearchBar
           searchBarInputUser={searchBarInputUser}
           setSearchBarInputUser={setSearchBarInputUser}
@@ -35,15 +31,13 @@ export default function Header({
           searchCount={searchCount}
           setSearchCount={setSearchCount}
         />
+      </div>
+      <div className="favorisIcon">
         <Link to="/favorites">
-          <img
-            className="favorisIcon"
-            src={favoritesIcon}
-            alt="Favourites icon"
-          />
+          <img src={favoritesIcon} alt="Favourites icon" />
         </Link>
       </div>
-    </div>
+    </header>
   );
 }
 

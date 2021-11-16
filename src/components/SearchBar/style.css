@@ -1,4 +1,4 @@
-form div {
+.searchBar {
   height: 4vh;
   display: flex;
   flex-direction: row-reverse;
@@ -7,10 +7,13 @@ form div {
   border-collapse: separate;
   perspective: 1px;
   overflow: hidden;
+  width: fit-content;
+  margin: auto;
 }
 
 input {
   border: none;
+  height: 100%;
 }
 
 input:focus {
@@ -30,18 +33,13 @@ button {
 }
 
 @media only screen and (min-width: 600px) {
-  form div {
+  .searchBar {
     height: 6vh;
     border-radius: 30px;
-    margin-top: 2vh;
   }
 
   input {
-    width: 35vw;
+    width: 45vw;
     font-size: 20px;
-  }
-
-  .searchBar {
-    margin-left: calc(12vw - 2vh - 5rem - 2vh);
   }
 }
