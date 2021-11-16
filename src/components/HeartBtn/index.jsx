@@ -52,7 +52,10 @@ export default function Heartbtn({ cocktail, favorites, setFavorites }) {
 }
 
 Heartbtn.propTypes = {
-  cocktail: PropTypes.shape,
+  cocktail: PropTypes.shape({
+    name: PropTypes.string,
+    picture: PropTypes.string,
+  }),
   favorites: PropTypes.arrayOf(PropTypes.string),
   setFavorites: PropTypes.func,
 };
