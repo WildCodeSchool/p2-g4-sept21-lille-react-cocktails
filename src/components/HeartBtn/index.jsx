@@ -1,7 +1,6 @@
 import { PropTypes } from 'prop-types';
-
 import Heart from '../../assets/coeurvide.png';
-import fullHeart from '../../assets/coeurtoutjaune.png';
+import fullHeart from '../../assets/coeurjaune.png';
 import './style.css';
 
 export default function Heartbtn({ cocktail, favorites, setFavorites }) {
