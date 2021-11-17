@@ -3,7 +3,10 @@ import axios from 'axios';
 import './style.css';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import Carousel from '../Carousel';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function CocktailDetail({ setStatsSearchBar }) {
   const { cocktailName } = useParams();
@@ -17,6 +20,17 @@ export default function CocktailDetail({ setStatsSearchBar }) {
       )
       .then(({ data }) => {
         setCocktaildetails(data.drinks[0]);
+      })
+      .catch(() => {
+        toast.error('No Cocktail found !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
     return setStatsSearchBar(true);
   }, []);
