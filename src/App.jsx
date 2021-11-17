@@ -56,7 +56,6 @@ function App() {
         </Route>
       </Switch>
       <ToastContainer
-        // theme="dark"
         limit={2}
         position="top-center"
         autoClose={5000}
