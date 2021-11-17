@@ -28,6 +28,7 @@ export default function FavoritesView({
                   setFavorites={setFavorites}
                   strDrink={favorite.name}
                   strDrinkThumb={favorite.picture}
+                  key={favorite.name}
                 />
               </Link>
             </>
@@ -39,7 +40,7 @@ export default function FavoritesView({
 }
 
 FavoritesView.propTypes = {
-  favorites: PropTypes.arrayOf(PropTypes.string),
+  favorites: PropTypes.arrayOf(PropTypes.shape()),
   setFavorites: PropTypes.func,
   setStatsSearchBar: PropTypes.func,
 };
