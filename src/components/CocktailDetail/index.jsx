@@ -10,6 +10,7 @@ export default function CocktailDetail({ setStatsSearchBar }) {
   const [cocktailDetails, setCocktaildetails] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${cocktailName}`
