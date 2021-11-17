@@ -55,7 +55,7 @@ Heartbtn.propTypes = {
     name: PropTypes.string,
     picture: PropTypes.string,
   }),
-  favorites: PropTypes.arrayOf(PropTypes.string),
+  favorites: PropTypes.arrayOf(PropTypes.shape()),
   setFavorites: PropTypes.func,
 };
 

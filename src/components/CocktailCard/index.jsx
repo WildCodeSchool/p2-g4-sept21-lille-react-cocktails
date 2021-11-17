@@ -29,7 +29,7 @@ export default function CocktailCard({
 CocktailCard.propTypes = {
   strDrink: PropTypes.string,
   strDrinkThumb: PropTypes.string,
-  favorites: PropTypes.arrayOf(PropTypes.string),
+  favorites: PropTypes.arrayOf(PropTypes.shape()),
   setFavorites: PropTypes.func,
 };
 CocktailCard.defaultProps = {
