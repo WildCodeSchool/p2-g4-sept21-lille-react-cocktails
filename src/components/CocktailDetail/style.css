@@ -9,7 +9,7 @@ section.cocktailDetail {
   border-radius: 30px;
   font-family: Ruda, sans-serif;
   grid-template-columns: 42vw 48vw;
-  grid-template-rows: 2.2rem calc(42vw - 2.2rem) 5rem calc(65vh - 5rem - 42vw);
+  grid-template-rows: 2.2rem calc(42vw - 2.2rem) 8rem calc(65vh - 8rem - 42vw);
   grid-template-areas:
     'image ingredientsTitle'
     'image ingredients'
@@ -57,15 +57,15 @@ section.cocktailDetail li {
 
 section.cocktailDetail h2 {
   grid-area: cocktail;
-  font-family: 'Rouge Script', sans-serif;
-  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
   padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-top: 2rem;
   background: #46454f;
   color: white;
 }
 
-p.receipe {
+.receipe {
   grid-area: receipe;
   background: #46454f;
   color: white;
@@ -79,7 +79,7 @@ p.receipe {
     height: 60vh;
     flex-direction: row-reverse;
     grid-template-columns: 30vh calc(95vw - 30vh);
-    grid-template-rows: 5rem calc(30vh - 5rem) 2rem calc(30vh - 2rem);
+    grid-template-rows: 8rem calc(30vh - 8rem) 2rem calc(30vh - 2rem);
     grid-template-areas:
       'image cocktail'
       'image receipe'

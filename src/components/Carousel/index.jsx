@@ -23,28 +23,40 @@ export default function Cocktail({ instructionString }) {
 
   return (
     <section className="slider">
-      <FaArrowCircleLeft
-        className={activSlice !== 0 ? 'left-arrow active wiggle' : 'left-arrow'}
-        onClick={prevSlide}
-      />
-      <div className="instuction">
-        {instructions.map((slide, id) => {
-          return (
-            <div className={id === activSlice ? 'slide active' : 'slide off '}>
-              {id === activSlice && slide}
-            </div>
-          );
-        })}
+      <div className="step">
+        <FaArrowCircleLeft
+          className={
+            activSlice !== 0 ? 'left-arrow active wiggle' : 'left-arrow'
+          }
+          onClick={prevSlide}
+        />
+        <div className="instruction">
+          {instructions.map((slide, id) => {
+            return (
+              <div
+                className={id === activSlice ? 'slide active' : 'slide off '}
+              >
+                {id === activSlice && slide}
+              </div>
+            );
+          })}
+        </div>
+
+        <FaArrowCircleRight
+          className={
+            activSlice === instructions.length - 1
+              ? 'right-arrow'
+              : 'right-arrow active wiggle'
+          }
+          onClick={nextSlide}
+        />
       </div>
 
-      <FaArrowCircleRight
-        className={
-          activSlice === instructions.length - 1
-            ? 'right-arrow'
-            : 'right-arrow active wiggle'
-        }
-        onClick={nextSlide}
-      />
+      {instructions.length > 1 ? (
+        <span>
+          {activSlice + 1} / {instructions.length}
+        </span>
+      ) : null}
     </section>
   );
 }
