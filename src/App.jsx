@@ -1,5 +1,6 @@
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { ToastContainer } from 'react-toastify';
 import RandomCocktailView from './components/RandomCocktailView';
 import CocktailView from './components/CocktailView';
 import CocktailDetail from './components/CocktailDetail';
@@ -7,6 +8,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import FavoritesView from './components/FavoritesView';
 import './style.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [searchBarInputUser, setSearchBarInputUser] = useState('');
@@ -53,6 +55,18 @@ function App() {
           <FavoritesView favorites={favorites} setFavorites={setFavorites} />
         </Route>
       </Switch>
+      <ToastContainer
+        limit={2}
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Footer />
     </Router>
   );

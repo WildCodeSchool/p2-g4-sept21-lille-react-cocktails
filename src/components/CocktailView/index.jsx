@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 import CocktailCard from '../CocktailCard';
+
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css';
 
 export default function CocktailView({
@@ -22,11 +25,19 @@ export default function CocktailView({
           `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchBarInputUser}`
         )
         .then(({ data }) => {
-          setCocktails(data.drinks);
+          if (Array.isArray(data.drinks)) setCocktails(data.drinks);
+          else throw new Error('Failed API call');
         })
         .catch(() => {
-          window.alert('No cocktail found please try again !');
-          window.location.reload();
+          toast.error('No Cocktail found !', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
         });
     }
     setStatsSearchBar(false);
