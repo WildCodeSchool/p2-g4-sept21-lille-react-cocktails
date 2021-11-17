@@ -1,31 +1,34 @@
 .slider {
   position: relative;
   height: 100%;
+  flex-direction: column;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.13rem;
 }
 
 .slide {
   opacity: 0;
   transition-duration: 1s;
-  font-size: 1 rem;
+  font-size: 1.3rem;
 }
 .instruction {
   width: 50%;
+  height: fit-content;
 }
 
 .slide.active {
   opacity: 1;
   transition-duration: 1s;
   transform: scale(1.08);
+  width: 100%;
 }
 
 .right-arrow {
-  top: 50% - 3rem;
   right: 2vh;
   font-size: 40px;
-  color: yellow;
+  color: #ffc700;
   opacity: 0;
   transition-duration: 1s;
   width: 20%;
@@ -41,10 +44,9 @@
 }
 
 .left-arrow {
-  top: 50% - 3rem;
   left: 2vh;
   font-size: 40px;
-  color: yellow;
+  color: #ffc700;
   opacity: 0;
   transition-duration: 1s;
   width: 20%;
@@ -58,7 +60,16 @@
   user-select: none;
   width: 20%;
 }
-
+.step {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.slider span {
+  color: #ffc700;
+  font-weight: bold;
+}
 /* SHAKER */
 @keyframes wiggle {
   2% {

@@ -41,12 +41,12 @@ export default function CocktailDetail({ setStatsSearchBar }) {
   return (
     <section className="cocktailDetail">
       <h2> {cocktailDetails.strDrink} </h2>
-      <p className="receipe">
+      <div className="receipe">
         <Carousel
           key={cocktailDetails.id}
           instructionString={cocktailDetails.strInstructions}
         />
-      </p>
+      </div>
 
       <div className="img">
         <img
