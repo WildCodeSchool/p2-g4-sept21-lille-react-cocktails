@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CocktailCard from '../CocktailCard';
 import './style.css';
@@ -7,14 +8,17 @@ export default function FavoritesView({ favorites, setFavorites }) {
     <>
       <div className="cardContainer">
         {favorites.map((favorite) => {
+          const path = `detail/${favorite.name}`;
           return (
             <>
-              <CocktailCard
-                favorites={favorites}
-                setFavorites={setFavorites}
-                strDrink={favorite.name}
-                strDrinkThumb={favorite.picture}
-              />
+              <Link className="displayLink" to={path}>
+                <CocktailCard
+                  favorites={favorites}
+                  setFavorites={setFavorites}
+                  strDrink={favorite.name}
+                  strDrinkThumb={favorite.picture}
+                />
+              </Link>
             </>
           );
         })}
