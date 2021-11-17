@@ -46,8 +46,7 @@
 
 @media only screen and (min-width: 600px) {
   .mainCard {
-    height: 30vh;
-    max-height: 610px;
+    height: 65vh;
     max-width: 400px;
     display: flex;
     flex-direction: column;
