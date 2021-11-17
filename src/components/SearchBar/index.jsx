@@ -14,30 +14,27 @@ export default function SearchBar({
   const location = useLocation();
   if (location.pathname === '/') {
     return (
-      <div className="searchBar">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setStatsSearchBar(true);
-            setSearchCount(searchCount + 1);
+      <form
+        className="searchBar"
+        onSubmit={(e) => {
+          e.preventDefault();
+          setStatsSearchBar(true);
+          setSearchCount(searchCount + 1);
+        }}
+      >
+        <input
+          type="search"
+          id="mySearch"
+          name="nameOfCocktail"
+          value={searchBarInputUser}
+          onChange={(e) => {
+            return setSearchBarInputUser(e.target.value);
           }}
-        >
-          <div>
-            <input
-              type="search"
-              id="mySearch"
-              name="nameOfCocktail"
-              value={searchBarInputUser}
-              onChange={(e) => {
-                return setSearchBarInputUser(e.target.value);
-              }}
-            />
-            <button type="submit">
-              <img src={searchIcon} alt="Search icon" />
-            </button>
-          </div>
-        </form>
-      </div>
+        />
+        <button type="submit">
+          <img src={searchIcon} alt="Search icon" />
+        </button>
+      </form>
     );
   }
   return null;
