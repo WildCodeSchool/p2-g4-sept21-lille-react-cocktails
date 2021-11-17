@@ -10,7 +10,6 @@ export default function SearchBar({
   searchCount,
   setSearchCount,
 }) {
-  window.scrollTo(0, 0);
   const location = useLocation();
   if (location.pathname === '/') {
     return (

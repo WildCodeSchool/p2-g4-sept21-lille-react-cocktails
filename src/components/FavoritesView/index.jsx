@@ -3,6 +3,7 @@ import CocktailCard from '../CocktailCard';
 import './style.css';
 
 export default function FavoritesView({ favorites, setFavorites }) {
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="cardContainer">

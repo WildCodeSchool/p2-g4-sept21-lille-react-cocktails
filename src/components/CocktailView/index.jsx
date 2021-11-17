@@ -15,6 +15,7 @@ export default function CocktailView({
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (statsSearchBar) {
       axios
         .get(
