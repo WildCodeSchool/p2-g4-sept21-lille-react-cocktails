@@ -1,13 +1,22 @@
-# Template for Frontend project
+# Shaker project🍹
 
-## First steps
+## Description ✍🏻
 
-### Install these extensions
+Shaker is a search engine of cocktails.
 
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [StyleLint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+He references more than 700 cocktails.
 
-### Install `husky`, which will check your code everytime you commit files
+Each one has his recipe to make the best cocktails.
 
-- `npm run prepare`
+Feel free to ask any questions 
+
+⚠️ stay safe do not drink too much and don't take your car ⚠️
+
+## Getting started 📌 ##
+
+1 - Fork the project
+
+2 - in your terminal install packages `npm install i`
+
+3 - run your local server `npm run start`
+
