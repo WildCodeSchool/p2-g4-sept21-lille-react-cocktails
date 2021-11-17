@@ -5,3 +5,7 @@
 body {
   background-color: #2b2a33;
 }
+
+:root {
+  --toastify-color-light: #d1d1d1;
+}
