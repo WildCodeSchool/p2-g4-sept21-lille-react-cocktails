@@ -52,7 +52,11 @@ function App() {
           <CocktailDetail setStatsSearchBar={setStatsSearchBar} />
         </Route>
         <Route path="/favorites">
-          <FavoritesView favorites={favorites} setFavorites={setFavorites} />
+          <FavoritesView
+            favorites={favorites}
+            setFavorites={setFavorites}
+            setStatsSearchBar={setStatsSearchBar}
+          />
         </Route>
       </Switch>
       <ToastContainer

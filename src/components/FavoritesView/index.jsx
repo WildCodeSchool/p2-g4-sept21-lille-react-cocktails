@@ -1,10 +1,20 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CocktailCard from '../CocktailCard';
 import './style.css';
 
-export default function FavoritesView({ favorites, setFavorites }) {
+export default function FavoritesView({
+  favorites,
+  setFavorites,
+  setStatsSearchBar,
+}) {
   window.scrollTo(0, 0);
+
+  useEffect(() => {
+    return setStatsSearchBar(true);
+  }, []);
+
   return (
     <>
       <div className="cardContainer">
@@ -31,9 +41,11 @@ export default function FavoritesView({ favorites, setFavorites }) {
 FavoritesView.propTypes = {
   favorites: PropTypes.arrayOf(PropTypes.string),
   setFavorites: PropTypes.func,
+  setStatsSearchBar: PropTypes.func,
 };
 
 FavoritesView.defaultProps = {
   favorites: [],
   setFavorites: () => {},
+  setStatsSearchBar: () => {},
 };
