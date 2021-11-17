@@ -27,6 +27,16 @@ export default function Cocktail({ instructionString }) {
         className={activSlice !== 0 ? 'left-arrow active wiggle' : 'left-arrow'}
         onClick={prevSlide}
       />
+      <div className="instuction">
+        {instructions.map((slide, id) => {
+          return (
+            <div className={id === activSlice ? 'slide active' : 'slide off '}>
+              {id === activSlice && slide}
+            </div>
+          );
+        })}
+      </div>
+
       <FaArrowCircleRight
         className={
           activSlice === instructions.length - 1
@@ -35,13 +45,6 @@ export default function Cocktail({ instructionString }) {
         }
         onClick={nextSlide}
       />
-      {instructions.map((slide, id) => {
-        return (
-          <div className={id === activSlice ? 'slide active' : 'slide off '}>
-            {id === activSlice && slide}
-          </div>
-        );
-      })}
     </section>
   );
 }

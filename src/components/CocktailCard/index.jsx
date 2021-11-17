@@ -16,6 +16,7 @@ export default function CocktailCard({
         </div>
         <h2 className="titleCard">{strDrink}</h2>
         <HeartBtn
+          className="hearts"
           cocktail={{ name: strDrink, picture: strDrinkThumb }}
           favorites={favorites}
           setFavorites={setFavorites}
