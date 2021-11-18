@@ -16,7 +16,9 @@ export default function Header({
 }) {
   return (
     <header className="header">
-      <h1>Shaker</h1>
+      <Link className="title" to="/">
+        <h1>Shaker</h1>
+      </Link>
       <div className="logo">
         <Link to="/">
           <img src={logo1} alt="Logo" />

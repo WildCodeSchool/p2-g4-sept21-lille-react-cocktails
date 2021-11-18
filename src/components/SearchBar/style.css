@@ -23,6 +23,7 @@ input:focus {
 form button img {
   height: 70%;
   opacity: 75%;
+  padding-left: 10px;
 }
 
 button {

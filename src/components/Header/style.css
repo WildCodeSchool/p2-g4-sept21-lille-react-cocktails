@@ -17,6 +17,11 @@
     ' . searchBar searchBar searchBar heart';
   margin-bottom: 2vh;
 }
+
+.title {
+  text-decoration: none;
+}
+
 .header h1 {
   grid-area: title;
   text-align: center;
