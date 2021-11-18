@@ -58,7 +58,7 @@ section.cocktailDetail li {
 section.cocktailDetail h2 {
   grid-area: cocktail;
   font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
+  font-size: 40px;
   padding-bottom: 1rem;
   padding-top: 2rem;
   background: #46454f;
