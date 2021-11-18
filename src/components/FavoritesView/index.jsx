@@ -17,24 +17,30 @@ export default function FavoritesView({
 
   return (
     <>
-      <div className="cardContainer">
-        {favorites.map((favorite) => {
-          const path = `detail/${favorite.name}`;
-          return (
-            <>
-              <Link className="displayLink" to={path}>
-                <CocktailCard
-                  favorites={favorites}
-                  setFavorites={setFavorites}
-                  strDrink={favorite.name}
-                  strDrinkThumb={favorite.picture}
-                  key={favorite.name}
-                />
-              </Link>
-            </>
-          );
-        })}
-      </div>
+      {favorites.length ? (
+        <div className="cardContainer">
+          {favorites.map((favorite) => {
+            const path = `detail/${favorite.name}`;
+            return (
+              <>
+                <Link className="displayLink" to={path}>
+                  <CocktailCard
+                    favorites={favorites}
+                    setFavorites={setFavorites}
+                    strDrink={favorite.name}
+                    strDrinkThumb={favorite.picture}
+                  />
+                </Link>
+              </>
+            );
+          })}
+        </div>
+      ) : (
+        <p className="noFavorites">
+          {`You don't have a favorite cocktail, to complete your list click
+          on the cards cocktail.`}
+        </p>
+      )}
     </>
   );
 }
