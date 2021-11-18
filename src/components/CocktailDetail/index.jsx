@@ -4,11 +4,15 @@ import './style.css';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
+import HeartBtn from '../HeartBtn';
 import Carousel from '../Carousel';
-
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function CocktailDetail({ setStatsSearchBar }) {
+export default function CocktailDetail({
+  setStatsSearchBar,
+  favorites,
+  setFavorites,
+}) {
   const { cocktailName } = useParams();
   const [cocktailDetails, setCocktaildetails] = useState([]);
 
@@ -76,13 +80,26 @@ export default function CocktailDetail({ setStatsSearchBar }) {
           return <li>{ingredient}</li>;
         })}
       </ul>
+      <HeartBtn
+        className="hearts"
+        cocktail={{
+          name: cocktailDetails.strDrink,
+          picture: cocktailDetails.strDrinkThumb,
+        }}
+        favorites={favorites}
+        setFavorites={setFavorites}
+      />
     </section>
   );
 }
 
 CocktailDetail.propTypes = {
   setStatsSearchBar: PropTypes.func,
+  favorites: PropTypes.arrayOf(PropTypes.string),
+  setFavorites: PropTypes.func,
 };
 CocktailDetail.defaultProps = {
   setStatsSearchBar: () => {},
+  favorites: [],
+  setFavorites: () => {},
 };

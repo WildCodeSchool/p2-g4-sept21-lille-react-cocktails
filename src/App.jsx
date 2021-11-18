@@ -49,7 +49,11 @@ function App() {
           )}
         </Route>
         <Route path="/detail/:cocktailName">
-          <CocktailDetail setStatsSearchBar={setStatsSearchBar} />
+          <CocktailDetail
+            setStatsSearchBar={setStatsSearchBar}
+            favorites={favorites}
+            setFavorites={setFavorites}
+          />
         </Route>
         <Route path="/favorites">
           <FavoritesView

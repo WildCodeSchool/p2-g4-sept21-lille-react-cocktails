@@ -87,6 +87,8 @@
 }
 @media only screen and (min-width: 1600px) {
   .mainCard {
-    width: 500px;
+    min-width: 400px;
+    max-width: 500px;
+    /* ou width : 500px;*/
   }
 }
