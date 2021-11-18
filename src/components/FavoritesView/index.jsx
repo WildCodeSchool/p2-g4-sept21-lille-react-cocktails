@@ -46,7 +46,7 @@ export default function FavoritesView({
 }
 
 FavoritesView.propTypes = {
-  favorites: PropTypes.arrayOf(PropTypes.string),
+  favorites: PropTypes.arrayOf(PropTypes.shape()),
   setFavorites: PropTypes.func,
   setStatsSearchBar: PropTypes.func,
 };

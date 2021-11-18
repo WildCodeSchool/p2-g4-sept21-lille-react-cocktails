@@ -23,7 +23,7 @@ export default function RandomCocktailView({ favorites, setFavorites }) {
         {cocktails.map((data) => {
           const path = `detail/${data.strDrink}`;
           return (
-            <Link className="displayLink" to={path}>
+            <Link className="displayLink" to={path} key={data.idDrink}>
               <CocktailCard
                 key={data.idDrink}
                 {...data}
@@ -39,7 +39,7 @@ export default function RandomCocktailView({ favorites, setFavorites }) {
 }
 
 RandomCocktailView.propTypes = {
-  favorites: PropTypes.arrayOf(PropTypes.string),
+  favorites: PropTypes.arrayOf(PropTypes.shape()),
   setFavorites: PropTypes.func,
 };
 RandomCocktailView.defaultProps = {
