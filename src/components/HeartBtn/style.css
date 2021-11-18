@@ -1,17 +1,17 @@
 .fullHeart img {
   height: 30px;
   width: 30px;
-  position: relative;
-  left: 50vw;
-  bottom: 9vw;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 .heart img {
   height: 30px;
   width: 30px;
-  position: relative;
-  left: 50vw;
-  bottom: 9vw;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 .heart {
@@ -26,14 +26,14 @@
   .fullHeart img {
     height: 40px;
     width: 40px;
-    left: 0vw;
-    bottom: 90px;
+    right: 10px;
+    top: 10px;
   }
 
   .heart img {
     height: 40px;
     width: 40px;
-    left: 0vw;
-    bottom: 90px;
+    nav-right: 10px;
+    top: 10px;
   }
 }
