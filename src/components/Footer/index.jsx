@@ -23,7 +23,7 @@ export default function Footer() {
             <span>Web Developer</span>
             <div className="socialLinks">
               <a
-                href="https://github.com/hloz"
+                href="https://github.com/HeloiseFerla"
                 target="_blank"
                 rel="noreferrer"
               >
