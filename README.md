@@ -6,7 +6,7 @@ Shaker is a search engine of cocktails.
 
 It references more than 700 cocktails.
 
-Each one has his recipe to make the best cocktails.
+Each one has it's recipe to make the best cocktails.
 
 Feel free to ask any questions 
 
