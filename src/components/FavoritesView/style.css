@@ -2,6 +2,17 @@ img.icon {
   height: 100%;
   padding-left: 4vw;
 }
+.noFavorites {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40vh;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Ruda';
+  color: #ffc700;
+  width: 60%;
+}
 
 @media only screen and (min-width: 600px) {
   img.icon {
